@@ -426,7 +426,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="row row-cols-auto justify-content-around">
+          <div className="row row-cols-5 ">
             {bestTV.map((tv) => (
               <Title
                 key={tv.id}
@@ -434,7 +434,6 @@ export default function Home() {
                 posterPath={tv.poster_path}
                 name={tv.name}
                 firstDate={tv.first_air_date}
-                runtime={tv.episode_run_time}
                 popularity={tv.popularity}
               />
               //   <div className="col  upcoming_post-div " key={tv.id} id={tv.id}>

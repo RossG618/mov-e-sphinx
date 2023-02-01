@@ -15,10 +15,10 @@ export const Title = (
       <img
         className="upcoming_poster"
         src={`https://image.tmdb.org/t/p/original/${posterPath}`}
-        alt=""
+        alt="poster"
       />
 
-      <div className="lsStyle-none d-flex justify-content-between text-light mt-3">
+      <div className="lsStyle-none d-flex justify-content-between text-light mt-3 px-2">
         <div className="text-start">
           <li className="text-light fs-5 fw-bold text-capitalize mb-2">
             {name}
@@ -28,9 +28,9 @@ export const Title = (
           </small>
         </div>
         <div className="flex-column align-items-end text-end">
-          <li className="mb-3 text-warning fw-bold">{firstDate}</li>
+          <li className="mb-3 text-warning fw-bold">{firstDate.slice(0, 4)}</li>
           <span className="d-flex gap-2 ">
-            <small className="mx-2">{runtime} min</small>
+            {runtime && <small className="mx-2">{runtime} min</small>}
             <small>
               <FontAwesomeIcon className="text-warning" icon={faThumbsUp} />{" "}
               {Math.round(popularity) / 10}

@@ -39,7 +39,7 @@ export const UpcomingMovies = () => {
               id={tv.id}
               posterPath={tv.poster_path}
               name={tv.title}
-              firstDate={tv.release_date.slice(0, 4)}
+              firstDate={tv.release_date}
               runtime={tv.runtime}
               popularity={tv.popularity}
             />
