@@ -182,7 +182,6 @@ export default function Home() {
 
           <div className="row row-cols-5">
             <UpcomingMovies />
-            <UpcomingMovies />
           </div>
         </div>
         <div className="download-offline pt-5">
