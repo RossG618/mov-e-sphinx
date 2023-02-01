@@ -1,0 +1,10 @@
+.navbar{
+    z-index: 92;
+    width: 100%;
+}
+.yellowHov{
+    color: rgba(255, 254, 254, 0.8);
+}
+.yellowHov:hover{
+    color: rgb(255, 193, 7);
+}
