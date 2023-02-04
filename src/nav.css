@@ -8,3 +8,6 @@
 .yellowHov:hover{
     color: rgb(255, 193, 7);
 }
+.yellowHov:focus{
+    text-decoration: #2c3 1px underline ;
+}

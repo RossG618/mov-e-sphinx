@@ -33,15 +33,16 @@ export const UpcomingMovies = () => {
 
     return(
         <>
-            {upcoming.map((tv) => (
+            {upcoming.map((m) => (
             <Title
-              key={tv.id}
-              id={tv.id}
-              posterPath={tv.poster_path}
-              name={tv.title}
-              firstDate={tv.release_date}
-              runtime={tv.runtime}
-              popularity={tv.popularity}
+              key={m.id}
+              id={m.id}
+              posterPath={m.poster_path}
+              name={m.title}
+              firstDate={m.release_date}
+              runtime={m.runtime}
+              popularity={m.popularity}
+              homePath={m.homepage}
             />
           ))}
         </>

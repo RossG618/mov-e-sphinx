@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import './nav.css';
+import { NavLink } from "react-router-dom";
 export default function Header() {
 return(
     <nav className="navbar navbar-expand-lg navbar-body bg-dark shadow  position-fixed ">
@@ -8,12 +9,12 @@ return(
 
         <div className="d-flex align-items-center gap-1">
             <FontAwesomeIcon className="text-warning" icon={faFilm} size='2x'/>
-            <h2 className="m-0 fw-bold text-light inter">Movi SPHINX</h2>
+            <h2 className="m-0 fw-bold text-light inter">Movi/SPHINX</h2>
         </div>
         <div>
-            <ul className="navbar-nav gap-4">
+            <ul className="navbar-nav gap-4 ls-1px">
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder text-warning"> Home</li></a>
-               <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">what's new</li></a>      
+               <NavLink to="/recentlyAdded" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">what's new</li></NavLink>      
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">movie</li></a>       
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">tv show</li></a>
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">pricing</li></a>

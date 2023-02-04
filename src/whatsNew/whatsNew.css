@@ -1,0 +1,164 @@
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline rgb(0, 238, 255) 2px;
+}
+.lsStyle-none{
+list-style: none;    
+}
+
+/* .opac-box{
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+} */
+.opac-box{
+    z-index: 10;
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.opac-box-recent{
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.hero-content{
+    left: 20%;
+    position: absolute;
+    z-index: 20;
+    justify-self: center !important;
+}
+
+
+.bg-blood{
+    background-color: var(--blood-red);
+}
+.bg-ocean{
+    background-color: var(--ocean-blue);
+}
+
+.rog-font{
+    font-family:'rog fonts', 'copperplate gothic', 'Orbitron', 'Alfa Slab One', 'Anton' !important;
+    
+}
+.nabla{
+    font-family: 'nabla' !important;
+}
+.esd{
+    font-family: 'East Sea Dokdo' !important;
+}
+.bebas{
+    font-family: 'Bebas Neue' !important;
+}
+.orbitron{
+    font-family: 'Orbitron' !important;
+}
+.inter{
+    font-family: 'Inter';
+}
+.exo{
+    font-family: 'Exo';
+}
+.prosto{
+    font-family: 'Prosto One';
+}
+.poppins{
+    font-family:'Poppins', sans-serif;
+    font-weight: 900px !important;
+}
+*{
+    font-family: 'Inter', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+
+.w-80{
+    width: 80% !important;
+}
+.upcoming_poster{
+    width: 185px;
+    height: 250px;
+    background-size: cover;
+    margin: 0;
+}
+
+.opac-box-06{
+    background: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.z-23{
+    position: sticky;
+    z-index: 23;
+}
+.z-50{
+    position: sticky !important;
+    z-index: 50 !important;
+}
+.rot90{
+    transform: rotate(90deg);
+}
+
+.trial{
+    background: rgb(243, 243, 15);
+}
+.ls-1px{
+    letter-spacing: 1px;
+}
+.insta{
+    background: #0099F7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+fill: #fff;
+}
+.recentAdded{
+    position: absolute;
+    z-index: 20;
+    justify-content: center !important;
+    bottom: 8%;
+    
+}
+
+/* .content-right{
+    right: 0;
+} */
+.bg-pic-wn-dragon{
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* height: 100%; */
+    z-index: 1;
+        background-repeat: no-repeat;
+        background-image: url('../images/theSpartan_dragon_with_flame.png');
+       background-size: cover;
+       background-position: center;
+    
+       /* clip-path: polygon(0 0, 100% 0%, 89% 100%, 0% 100%); */
+       
+    }
+    .bg-pic-wn-bloodgirl{
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../images/theSpartan_981964555469062206_19f50992-e19f-4e40-b8f4-9c9738679b43.png');
+        position: fixed;
+        background-position: center;
+        /* clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%); */
+        
+    }
+    
