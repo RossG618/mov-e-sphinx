@@ -74,22 +74,22 @@ export default function RecentlyAdded() {
   return (
     <div className="overflow-hidden pt-5">
       <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center">
-        <div className="row row-cols-sm-1 row-cols-xxl-2">
+        <div className="row row-cols-md-1 row-cols-xxl-2 ">
           <div className=" col   px-5 pt-5 pb-5 "> 
-            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23">
+            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
               new movies
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 row-cols-xxl-5">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3">
               <UpcomingMovies />
             </div>
           </div>
           <div className=" col  content-right px-5 pt-5 pb-5">
-            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23">
+            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3" >
               new shows
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 row-cols-xxl-5 ">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
               <UpcomingTV />
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function RecentlyAdded() {
        
       </div>
 
-      <div className="top-rated bg-dark ">
+      <div className="top-rated ">
         <div className="container py-5 z-23">
           <small className="text-warning text-uppercase">
             online streaming
@@ -192,7 +192,7 @@ export default function RecentlyAdded() {
         </div>
       </div>
 
-      <div className="top-rated-tv bg-secondary ">
+      <div className="top-rated-tv ">
         <div className="container py-5 z-23">
           <small className="text-warning text-uppercase">
             online streaming

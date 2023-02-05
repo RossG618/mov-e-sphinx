@@ -87,8 +87,8 @@ list-style: none;
     width: 80% !important;
 }
 .upcoming_poster{
-    width: 185px;
-    height: 250px;
+    width: 165px;
+    height: 250px !important; 
     background-size: cover;
     margin: 0;
 }

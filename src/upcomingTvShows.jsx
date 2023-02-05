@@ -13,6 +13,7 @@ export const UpcomingTV = () => {
       `${tvURL}94605?api_key=${API_KEY}`,
       `${tvURL}119051?api_key=${API_KEY}`,
       `${tvURL}66732?api_key=${API_KEY}`,
+      `${tvURL}207863?api_key=${API_KEY}`,
     ];
 
     const tvRequests = tvURLs.map((url) => axios.get(url));
@@ -24,7 +25,7 @@ export const UpcomingTV = () => {
           //  console.log(responses)
           //   bestTV.push(res.data);
           setBestTV((bestTV) => [...bestTV, res.data]);
-          console.log(res.data);
+          // console.log(res.data);
         });
       })
       .catch((res) => console.log(res));

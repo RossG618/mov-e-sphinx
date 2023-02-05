@@ -29,10 +29,10 @@ export const UpcomingGenre = () => {
       .then((resp) => {
         let store = resp.data.results;
         store.forEach((res) => {
-          console.log(store);
           setUpcomAction((upcomAction) => [...upcomAction, res]);
           // upcomAction.push(res.data.results.slice(0, 4));
         });
+        console.log(store);
         
       })
       .catch((res) => console.log(res.data));
@@ -65,10 +65,10 @@ export const UpcomingGenre = () => {
       .then((resp) => {
         let store = resp.data.results;
         store.forEach((res) => {
-          console.log(store);
           setUpcomAction((upcomAction) => [...upcomAction, res]);
           // upcomAction.push(res.data.results.slice(0, 4));
         });
+        console.log(store);
         
       })
       .catch((res) => console.log(res.data));
@@ -95,10 +95,9 @@ export const UpcomingGenre = () => {
   return (
     <>
           
-          {console.log(upcomAction)}
         <Carousel className="" interval={2000} activeIndex={index} onSelect={handleSelect} showThumbs={false}>
-                <div className=" row row-cols-7">
-            {upcomAction.slice(0, 9).map((m) => (
+                <div className=" row row-cols-6">
+            {upcomAction.slice(0, 6).map((m) => (
               <Title
                 key={m.id}
                 id={m.id}
@@ -112,8 +111,8 @@ export const UpcomingGenre = () => {
             ))}
           </div>
           
-            <div className=" row row-cols-7">
-            {upcomAction.slice(9, 18).map((m) => (
+            <div className=" row row-cols-6">
+            {upcomAction.slice(6, 12).map((m) => (
               <Title
                 key={m.id}
                 id={m.id}
@@ -128,8 +127,22 @@ export const UpcomingGenre = () => {
 
             </div>
 
-            <div className="  row row-cols-7">
-            {upcomAction.slice(18, 27).map((m) => (
+            <div className=" row row-cols-6">
+            {upcomAction.slice(12, 18).map((m) => (
+              <Title
+                key={m.id}
+                id={m.id}
+                posterPath={m.poster_path}
+                name={m.title}
+                firstDate={m.release_date}
+                runtime={m.runtime}
+                popularity={m.popularity}
+                homePath={m.homepage}
+              />
+            ))}
+            </div>
+            <div className=" row row-cols-6">
+            {upcomAction.slice(18, 24).map((m) => (
               <Title
                 key={m.id}
                 id={m.id}

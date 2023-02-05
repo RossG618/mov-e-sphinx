@@ -21,11 +21,11 @@ export const TopRatedMovies = () => {
         .then(resp => {
           let store = resp.data.results.slice(0, 10);
           store.forEach(res => {
-            console.log(res)
             setValueTV((upcomingTV) => [...upcomingTV, res]);
+            // console.log(res)
             // upcomingTV.push(res.data.results.slice(0, 4));
           });
-          console.log(upcomingTV)
+          console.log(store)
         }).catch(res => console.log(res.data))
       }, [])
       

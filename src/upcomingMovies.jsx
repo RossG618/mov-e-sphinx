@@ -13,6 +13,7 @@ export const UpcomingMovies = () => {
           `${movieURL}49521?api_key=${API_KEY}`,
           `${movieURL}436270?api_key=${API_KEY}`,
           `${movieURL}254128?api_key=${API_KEY}`,
+          `${movieURL}640146?api_key=${API_KEY}`,
         ];
     
         const requests = movieURLs.map((url) => axios.get(url));
