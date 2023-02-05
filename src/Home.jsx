@@ -14,8 +14,9 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { UpcomingMovies } from "./upcomingMovies";
-import { UpcomingTV } from "./upcomingTvShows";
+// import { UpcomingTV } from "./upcomingTvShows";
 import { TopRatedMovies } from "./topRateMovies";
+import { TopRatedShows } from './topRateShows';
 //
 export default function Home() {
   
@@ -137,6 +138,7 @@ export default function Home() {
                 className="border border-warning"
                 src="https://www.slashgear.com/img/gallery/netflix-4k-streaming-on-macos-big-sur-to-require-a-t2-security-chip/intro-import.jpg"
                 width="500px"
+
                 alt="download"
               />
               <button className="btn btn-info fw-light h-50 align-self-end rounded border-0 ">
@@ -296,7 +298,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="row row-cols-5 ">
-            <UpcomingTV />
+            <TopRatedShows/>
 
             
           </div>

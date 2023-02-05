@@ -32,7 +32,7 @@ height: 73vh;
     position: absolute;
 }
 .hero-content{
-    left: 20%;
+    left: 18rem;
     position: absolute;
     z-index: 20;
     justify-self: center !important;

@@ -11,9 +11,10 @@ import { UpcomingMovies } from "../upcomingMovies";
 import { UpcomingTV } from "../upcomingTvShows";
 import { TopRatedMovies } from "../topRateMovies";
 import { UpcomingGenre } from "./upcomingActionMovies";
+import { TopRatedShows } from './../topRateShows';
 // import { PreviewNewMovie } from "./previewNewMovies";
 // import { PreviewNewTV } from "./previewNewTV";
-//
+
 export default function RecentlyAdded() {
   //     useEffect(() => {
 
@@ -74,13 +75,13 @@ export default function RecentlyAdded() {
   return (
     <div className="overflow-hidden pt-5">
       <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center">
-        <div className="row row-cols-md-1 row-cols-xxl-2 ">
+        <div className="row row-cols-md-1 row-cols-xxl-2">
           <div className=" col   px-5 pt-5 pb-5 "> 
             <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
               new movies
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div className="row row-cols-1 row-cols-md-5 row-cols-md-4 row-cols-xl-3">
               <UpcomingMovies />
             </div>
           </div>
@@ -89,7 +90,7 @@ export default function RecentlyAdded() {
               new shows
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
+            <div className="row row-cols-1 row-cols-md-5 row-cols-lg-4 row-cols-xl-3 ">
               <UpcomingTV />
             </div>
           </div>
@@ -103,7 +104,7 @@ export default function RecentlyAdded() {
       <div className="home pb-5 ">
         {/* <div className="opac-box-06"></div> */}
 
-        <div className=" z-23 mx-5">
+        <div className=" z-23 mx-5 w-75 mx-auto">
           <div className="justify-content-between d-flex mt-5 pt-5">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
@@ -128,7 +129,7 @@ export default function RecentlyAdded() {
           </div>
           <UpcomingGenre />
         </div>
-        <div className="mx-5 z-23">
+        <div className="mx-5 z-23 w-75  justify-content-center mx-auto">
           <div className="justify-content-between d-flex mt- pt-">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
@@ -142,7 +143,7 @@ export default function RecentlyAdded() {
 
           <UpcomingGenre />
         </div>
-        <div className="mx-5 z-23">
+        <div className="mx-5 z-23 w-75 mx-auto">
           <div className="justify-content-between d-flex mt- pt-">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
@@ -220,7 +221,7 @@ export default function RecentlyAdded() {
             </ul>
           </div>
           <div className="row row-cols-5 ">
-            <UpcomingTV />
+            <TopRatedShows/>
           </div>
         </div>
       </div>

@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsUp
 } from "@fortawesome/free-solid-svg-icons";
-import { lineTextStyle } from "./whatsNew/title-expand";
-export const Title = (
+import { lineTextStyle } from "../whatsNew/title-expand";
+export const TitleSM = (
   {id,
   posterPath,
   name,
@@ -14,12 +14,11 @@ export const Title = (
 homePath}
 ) => {
   return (
-    <div className="col mb-3 z-23 upcoming_poster-div align-items-center h" key={id} id={id}>
+    <div className="col mb-3 z-23 upcoming_poster-div align-items-center px-5" key={id} id={id}>
       <a href={homePath}>
 
       <img
-        className="w-100"
-        height="360"
+        className="w-80"
         src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
         alt="poster"
       />
@@ -53,12 +52,12 @@ homePath}
           </span>
         </div>
       </div> */}
-      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light p-3   bg-dark ">
-        <div className="text-start  justify-content-between  d-flex ">
+      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light px-2 ">
+        <div className="text-start px-3 pt-2 justify-content-between  d-flex">
           <a href={homePath}>
-          <small className="text-light  fw-bold  text-capitalize mb-2 " style={lineTextStyle}>
+          <p className="text-light  fw-bold text-capitalize mb-2 " style={lineTextStyle}>
             {name}
-          </small>
+          </p>
           </a> 
         </div>
         <div className="d-flex align-items-center gap-3 px-4">
@@ -73,14 +72,13 @@ homePath}
               {Math.round(popularity) / 10}
             </small>
           </span>
-          <div className="align-items-center">
+          <span className="align-items-center">
             <small className="mb-3 text-warning fw-bold">{firstDate.slice(0, 4)}</small>
           {/* {endDate > firstDate &&
           <small className="mb-3 text-warning fw-bold">-{endDate.slice(0, 4)}</small>
           } */}
-          </div>
+          </span>
         </div>
-          <button className="rounded btn-info btn text-uppercase border-0 mt-3 w-100">watch now</button>
       </div>
     </div>
   );

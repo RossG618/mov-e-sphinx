@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Title } from "../title";
+// import { Title } from "../title";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//    faArrowCircleRight, faArrowCircleLeft
+import { TitleSM } from './../titles/title-sm';
+//  faArrowCircleRight, faArrowCircleLeft
 //   } from "@fortawesome/free-solid-svg-icons";
 
 export const UpcomingGenre = () => {
@@ -98,7 +98,7 @@ export const UpcomingGenre = () => {
         <Carousel className="" interval={2000} activeIndex={index} onSelect={handleSelect} showThumbs={false}>
                 <div className=" row row-cols-6">
             {upcomAction.slice(0, 6).map((m) => (
-              <Title
+              <TitleSM
                 key={m.id}
                 id={m.id}
                 posterPath={m.poster_path}
@@ -113,7 +113,7 @@ export const UpcomingGenre = () => {
           
             <div className=" row row-cols-6">
             {upcomAction.slice(6, 12).map((m) => (
-              <Title
+              <TitleSM
                 key={m.id}
                 id={m.id}
                 posterPath={m.poster_path}
@@ -129,7 +129,7 @@ export const UpcomingGenre = () => {
 
             <div className=" row row-cols-6">
             {upcomAction.slice(12, 18).map((m) => (
-              <Title
+              <TitleSM
                 key={m.id}
                 id={m.id}
                 posterPath={m.poster_path}
@@ -143,7 +143,7 @@ export const UpcomingGenre = () => {
             </div>
             <div className=" row row-cols-6">
             {upcomAction.slice(18, 24).map((m) => (
-              <Title
+              <TitleSM
                 key={m.id}
                 id={m.id}
                 posterPath={m.poster_path}

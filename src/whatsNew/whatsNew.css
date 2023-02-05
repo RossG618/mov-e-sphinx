@@ -34,12 +34,7 @@ list-style: none;
     height: 100vh;
     position: absolute;
 }
-.hero-content{
-    left: 20%;
-    position: absolute;
-    z-index: 20;
-    justify-self: center !important;
-}
+
 
 
 .bg-blood{
@@ -124,6 +119,9 @@ background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-2
 background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 fill: #fff;
 }
+.recent{
+    height: 100vh;
+}
 .recentAdded{
     position: absolute;
     z-index: 20;
@@ -149,6 +147,7 @@ fill: #fff;
        /* clip-path: polygon(0 0, 100% 0%, 89% 100%, 0% 100%); */
        
     }
+    
     .bg-pic-wn-bloodgirl{
         top: 0;
         width: 100%;
