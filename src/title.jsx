@@ -17,7 +17,7 @@ homePath}
       <a href={homePath}>
 
       <img
-        className="w-50"
+        className=""
         src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
         alt="poster"
       />
@@ -51,7 +51,7 @@ homePath}
           </span>
         </div>
       </div> */}
-      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light mt-2 bg-secondary ">
+      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light mt-2  ">
         <div className="text-start px-3 justify-content-between  d-flex">
           <a href={homePath}>
           <p className="text-light  fw-bold text-capitalize mb-2 ">

@@ -24,7 +24,7 @@ return(
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">contact</li></a>
             </ul>
         </div>
-        <div>###</div>
+        
     </div>
 
 </nav>
