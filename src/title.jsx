@@ -2,7 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsUp
 } from "@fortawesome/free-solid-svg-icons";
-import { lineTextStyle } from "./whatsNew/title-expand";
+
+
+import './title.css';
+
+//
 export const Title = (
   {id,
   posterPath,
@@ -13,8 +17,17 @@ export const Title = (
   popularity,
 homePath}
 ) => {
+
+  const lineTextStyleTwo = {
+    maxWidth: '100%',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 3,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  };
   return (
-    <div className="col mb-3 z-23 upcoming_poster-div align-items-center h" key={id} id={id}>
+    <div className="col mb-3 z-23 upcoming_poster-div align-items-center " key={id} id={id}>
       <a href={homePath}>
 
       <img
@@ -56,7 +69,7 @@ homePath}
       <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light p-3   bg-dark ">
         <div className="text-start  justify-content-between  d-flex ">
           <a href={homePath}>
-          <small className="text-light  fw-bold  text-capitalize mb-2 " style={lineTextStyle}>
+          <small className="text-light  fw-bold  text-capitalize mb-2 title-name" style={lineTextStyleTwo}>
             {name}
           </small>
           </a> 

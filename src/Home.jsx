@@ -17,6 +17,7 @@ import { UpcomingMovies } from "./upcomingMovies";
 // import { UpcomingTV } from "./upcomingTvShows";
 import { TopRatedMovies } from "./topRateMovies";
 import { TopRatedShows } from './topRateShows';
+import { Link } from "react-router-dom";
 //
 export default function Home() {
   
@@ -88,11 +89,11 @@ export default function Home() {
               </li>
             </span>
           </ul>
-
-          <button className="text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-4 fw-bold d-flex align-items-center py-2 px-4 gap-2">
+          <Link to="/recently-added" className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-4 fw-bold d-flex align-items-center py-2 px-3 gap-2 " style={{width: 'fit-content'}}>
             <FontAwesomeIcon className="mx-2" icon={faPlay} />
             watch now
-          </button>
+          </Link>
+          
         </div>
         <div className="hero-left py-5"></div>
         <div className="hero-right py-5"></div>
@@ -104,7 +105,7 @@ export default function Home() {
         <div className="opac-box-06"></div>
 
         <div className="container z-23">
-          <div className="justify-content-between d-flex mt-5">
+          <div className="justify-content-between d-flex my-5">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
                 4k streaming
@@ -127,21 +128,19 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="row row-cols-5">
+          <div className="row row-cols-2 row-cols-md-3  row-cols-xl-5">
             <UpcomingMovies />
           </div>
         </div>
         <div className="download-offline pt-5">
-          <div className="container d-flex py-5 z-23">
-            <div className="d-flex gap-3 align-items-base col">
+          <div className=" d-flex py-5 z-23 row row-cols-1 row-cols-xl-2 container mx-auto ">
+            <div className="d-flex gap-3 mb-5 align-items-base justify-content-center col">
               <img
-                className="border border-warning"
+                className="border border-warning img-square "
                 src="https://www.slashgear.com/img/gallery/netflix-4k-streaming-on-macos-big-sur-to-require-a-t2-security-chip/intro-import.jpg"
-                width="500px"
-
                 alt="download"
               />
-              <button className="btn btn-info fw-light h-50 align-self-end rounded border-0 ">
+              <button className="btn btn-info fw-light  align-self-end rounded border-0 " style={{height:500}}>
                 <p className="rot90">DOWNLOAD</p>{" "}
                 <svg
                   className="mt-4"
@@ -167,7 +166,7 @@ export default function Home() {
                 >
                   <path d="M8 25.5v-3h32v3Z" />
                 </svg>
-                <small className="text-uppercase text-light  fw-bold m-0">
+                <small className="text-uppercase text-light  fw-bold --0">
                   our services
                 </small>
               </span>
@@ -175,7 +174,7 @@ export default function Home() {
               <h2 className="text-capitalize fw-bold text-light">
                 dowload your movies shows watch offline
               </h2>
-              <p className="text-secondary">
+              <p className="text-secondary ">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
                 ratione officiis necessitatibus officia dolorem. Dignissimos
                 consequuntur harum, quas, non est nulla repellendus corrupti
@@ -197,7 +196,7 @@ export default function Home() {
                     <h4 className="text-capitalize text-light fw-bold">
                       enjoy on your TV
                     </h4>
-                    <p className="text-secondary">
+                    <p className="text-secondary ">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quod, voluptates tempore hic voluptatum aliquid, minus
                       voluptatibus atque dicta, autem pariatur ut iure natus
@@ -221,7 +220,7 @@ export default function Home() {
                     <h4 className="text-capitalize text-light fw-bold">
                       watch anywhere
                     </h4>
-                    <p className="text-secondary">
+                    <p className="text-secondary ">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quod, voluptates tempore hic voluptatum aliquid, minus
                       voluptatibus atque dicta, autem pariatur ut iure natus

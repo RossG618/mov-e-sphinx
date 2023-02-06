@@ -5,6 +5,7 @@ import Home from './Home';
 import React from "react";
 import RecentlyAdded from './whatsNew/recentlyAdded';
 import Header from './Header';
+import { Movie } from './watchNow/movieInfoPage';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Router>
         <Header />
      < Routes>
+
+     <Route path='/movie' element={<Movie/>} />
      <Route path='/recentlyAdded' element={<RecentlyAdded/>} />
      <Route exact path='/' element={<Home/>} />
      

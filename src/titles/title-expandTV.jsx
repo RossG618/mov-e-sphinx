@@ -37,7 +37,7 @@ export const TitleExpandTV = ({
       <div className="lsStyle-none justify-content-between text-light mt-3 px-5 col">
         <div className="text-start">
           <a href={homePath}>
-            <li className="text-light fs-3 fw-bold text-capitalize mb-2 ">
+            <li className="text-light fs-3 fw-bold text-capitalize mb-2  ">
               {name}
             </li>
           </a>

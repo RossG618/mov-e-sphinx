@@ -1,9 +1,7 @@
 a{
     text-decoration: none;
 }
-a:hover{
-    text-decoration: underline rgb(0, 238, 255) 2px;
-}
+
 .lsStyle-none{
 list-style: none;    
 }
@@ -119,9 +117,9 @@ background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-2
 background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 fill: #fff;
 }
-.recent{
+/* .recent{
     height: 100vh;
-}
+} */
 .recentAdded{
     position: absolute;
     z-index: 20;

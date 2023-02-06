@@ -75,13 +75,13 @@ export default function RecentlyAdded() {
   return (
     <div className="overflow-hidden pt-5">
       <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center">
-        <div className="row row-cols-md-1 row-cols-xxl-2">
+        <div className="row row-cols-sm-2 row-cols-xxl-2">
           <div className=" col   px-5 pt-5 pb-5 "> 
             <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
               new movies
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-5 row-cols-md-4 row-cols-xl-3">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3  row-cols-xxl-5 ">
               <UpcomingMovies />
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function RecentlyAdded() {
               new shows
             </h2>
 
-            <div className="row row-cols-1 row-cols-md-5 row-cols-lg-4 row-cols-xl-3 ">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3  row-cols-xxl-5  ">
               <UpcomingTV />
             </div>
           </div>
@@ -170,24 +170,24 @@ export default function RecentlyAdded() {
           </h2>
           <div className="my-5">
             <ul>
-              <li className="btn rounded border shadow mx-2 text-uppercase fw-bold text-bg-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 all movies
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase fw-bold text-bg-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 action
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase fw-bold text-bg-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 comedy
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase fw-bold text-bg-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 horror
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase fw-bold text-bg-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 sci-fi
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5">
+          <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 ">
             <TopRatedMovies />
           </div>
         </div>
@@ -203,24 +203,24 @@ export default function RecentlyAdded() {
           </h2>
           <div className="my-5">
             <ul>
-              <li className="btn rounded shadow mx-2 text-uppercase fw-bold text-bg-dark">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 all shows
               </li>
-              <li className="btn rounded shadow mx-2 text-uppercase fw-bold text-bg-dark">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 action
               </li>
-              <li className="btn rounded shadow mx-2 text-uppercase fw-bold text-bg-dark">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 comedy
               </li>
-              <li className="btn rounded shadow mx-2 text-uppercase fw-bold text-bg-dark">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 horror
               </li>
-              <li className="btn rounded shadow mx-2 text-uppercase fw-bold text-bg-dark">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 sci-fi
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5 ">
+          <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 ">
             <TopRatedShows/>
           </div>
         </div>

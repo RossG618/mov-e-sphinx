@@ -3,6 +3,8 @@ import {
   faThumbsUp
 } from "@fortawesome/free-solid-svg-icons";
 import { lineTextStyle } from "../whatsNew/title-expand";
+import '../title.css';
+//
 export const TitleSM = (
   {id,
   posterPath,
@@ -18,7 +20,7 @@ homePath}
       <a href={homePath}>
 
       <img
-        className="w-80"
+        className="w-100 poster"
         src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
         alt="poster"
       />
@@ -52,10 +54,10 @@ homePath}
           </span>
         </div>
       </div> */}
-      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light px-2 ">
-        <div className="text-start px-3 pt-2 justify-content-between  d-flex">
+      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light  ">
+        <div className="text-start pt-2 justify-content-between  d-flex">
           <a href={homePath}>
-          <p className="text-light  fw-bold text-capitalize mb-2 " style={lineTextStyle}>
+          <p className="text-light  fw-bold text-capitalize mb-2 title-name" style={lineTextStyle}>
             {name}
           </p>
           </a> 

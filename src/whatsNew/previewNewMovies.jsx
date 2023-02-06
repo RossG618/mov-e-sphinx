@@ -13,14 +13,14 @@ export const PreviewNewMovie = () => {
       .then((res) => {
         //  console.log(responses)
         // setPreview.push(res.data);
-        setPreview(res.data);
-        console.log(preview);
+        setPreview( res.data);
+        console.log(res.data);
       })
       .catch((res) => console.log(res));
   }, []);
   return (
     <>
-    
+    {console.log(preview)}
      <TitleExpand
               id={preview.id}
               posterPath={preview.poster_path}

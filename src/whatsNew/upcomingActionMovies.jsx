@@ -96,7 +96,7 @@ export const UpcomingGenre = () => {
     <>
           
         <Carousel className="" interval={2000} activeIndex={index} onSelect={handleSelect} showThumbs={false}>
-                <div className=" row row-cols-6">
+                <div className="  row row-cols-2 row-cols-md-3 row-cols-d-4 row-cols-xl-5 row-cols-xxl-6 mx-auto container">
             {upcomAction.slice(0, 6).map((m) => (
               <TitleSM
                 key={m.id}
@@ -111,7 +111,7 @@ export const UpcomingGenre = () => {
             ))}
           </div>
           
-            <div className=" row row-cols-6">
+            <div className=" row row-cols-2 row-cols-md-3 row-cols-xl-5 row-cols-xxl-6 mx-auto container">
             {upcomAction.slice(6, 12).map((m) => (
               <TitleSM
                 key={m.id}
@@ -127,7 +127,7 @@ export const UpcomingGenre = () => {
 
             </div>
 
-            <div className=" row row-cols-6">
+            <div className=" row row-cols-2 row-cols-md-3 row-cols-xl-5 row-cols-xxl-6 mx-auto container">
             {upcomAction.slice(12, 18).map((m) => (
               <TitleSM
                 key={m.id}
@@ -141,7 +141,7 @@ export const UpcomingGenre = () => {
               />
             ))}
             </div>
-            <div className=" row row-cols-6">
+            <div className=" row row-cols-2 row-cols-md-3 row-cols-xl-5 row-cols-xxl-6 mx-auto container">
             {upcomAction.slice(18, 24).map((m) => (
               <TitleSM
                 key={m.id}
