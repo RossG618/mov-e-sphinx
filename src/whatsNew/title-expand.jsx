@@ -71,10 +71,10 @@ export const TitleExpand = () => {
            :
               <p className="text-start gap-3" style={lineTextStyle}>{preview.overview}</p>
           }
-          {!moreText ? <a role="button" className="text-info" onClick={() => setText(true)}
-          >More</a> :
-          <a role="button" className="text-info" onClick={() => setText(false)}
-          >Less</a>}
+          {!moreText ? <p role="button" className="text-info" onClick={() => setText(true)}
+          >More</p> :
+          <p role="button" className="text-info" onClick={() => setText(false)}
+          >Less</p>}
         </div>
 <button className="btn btn-info fw-light align-self-end rounded border-0  col w-50" >
                 <p className="m-0" >DOWNLOAD</p>{" "}
