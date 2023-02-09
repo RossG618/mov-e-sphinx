@@ -1,9 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faThumbsUp
+  faThumbsUp,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { lineTextStyle } from "../whatsNew/title-expand";
+// import { faStar} from "@fortawesome/free-regular-svg-icons";
+// import { lineTextStyle } from "../whatsNew/title-expand";
+import { Link } from "react-router-dom";
 import '../title.css';
+import { useState } from 'react';
+// import { useParams } from "react-router-dom";
 //
 export const TitleSM = (
   {id,
@@ -13,14 +18,31 @@ export const TitleSM = (
   endDate,
   runtime,
   popularity,
-homePath}
+homePath,
+setId,
+}
 ) => {
+  const [favIcon, setFavIcon] = useState(false);
+  // const lineTextStyleTwo = {
+  //   maxWidth: '100%',
+  //   display: '-webkit-box',
+  //   WebkitBoxOrient: 'vertical',
+  //   WebkitLineClamp: 1,
+  //   overflow: 'hidden',
+  //   textOverflow: 'ellipsis',
+  // };
+  const handleFav = (id) => {
+    setFavIcon(!favIcon)
+  
+  
+  }
+  // const {path, url} = useParams();
   return (
-    <div className="col mb-3 z-23 upcoming_poster-div align-items-center px-5" key={id} id={id}>
+    <div className="col mb-3 z-23 upcoming_poster-div align-items-center " key={id} id={id}>
       <a href={homePath}>
 
       <img
-        className="w-100 poster"
+        className="w-100 poster full-idth"
         src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
         alt="poster"
       />
@@ -54,13 +76,17 @@ homePath}
           </span>
         </div>
       </div> */}
-      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light  ">
-        <div className="text-start pt-2 justify-content-between  d-flex">
+      <div className="lsStyle-none flex-column d-flex justify-content-center align-items-center text-light">
+        <div className="text-start pt-2 px-3 justify-content-between gap-3 d-flex">
           <a href={homePath}>
-          <p className="text-light  fw-bold text-capitalize mb-2 title-name" style={lineTextStyle}>
+          <p className="text-light  fw-bold text-capitalize mb-2 title-name ">
             {name}
           </p>
           </a> 
+{ favIcon ?
+  <FontAwesomeIcon className="text-success" icon={faStar} onClick={() => handleFav(id)}/>:
+  <FontAwesomeIcon icon={faStar} onClick={() => handleFav(id)}/>
+}
         </div>
         <div className="d-flex align-items-center gap-3 px-4">
          <small className="text-bg-transparent fw-bold text-warning  py-1">
@@ -74,6 +100,7 @@ homePath}
               {Math.round(popularity) / 10}
             </small>
           </span>
+
           <span className="align-items-center">
             <small className="mb-3 text-warning fw-bold">{firstDate.slice(0, 4)}</small>
           {/* {endDate > firstDate &&
@@ -81,6 +108,8 @@ homePath}
           } */}
           </span>
         </div>
+        <Link to={`/movies/${id}`} onClick={(id) => setId(id)}   className="rounded btn-info btn text-uppercase border-0 mt-3 px-0 w-75">watch now</Link>
+
       </div>
     </div>
   );

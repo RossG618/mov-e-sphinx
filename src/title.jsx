@@ -5,24 +5,25 @@ import {
 
 
 import './title.css';
+import { Link, Route } from 'react-router-dom';
 
 //
 export const Title = (
   {id,
-  posterPath,
-  name,
-  firstDate,
-  endDate,
-  runtime,
-  popularity,
-homePath}
-) => {
-
+    posterPath,
+    name,
+    firstDate,
+    endDate,
+    runtime,
+    popularity,
+    homePath}
+    ) => {
+      
   const lineTextStyleTwo = {
     maxWidth: '100%',
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 3,
+    WebkitLineClamp: 2,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   };
@@ -93,7 +94,7 @@ homePath}
           } */}
           </div>
         </div>
-          <button className="rounded btn-info btn text-uppercase border-0 mt-3 w-100">watch now</button>
+          <Link to={`/movie/550`} className="rounded btn-info btn text-uppercase border-0 mt-3 w-100">watch now</Link>
       </div>
     </div>
   );

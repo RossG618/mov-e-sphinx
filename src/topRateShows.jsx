@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Title } from "./title";
-// import { TitleSM } from './titles/title-sm';
+// import { Title } from "./title";
+import { TitleSM } from './titles/title-sm';
 export const TopRatedShows = () => {
     const [bestTV, setBestTV] = useState([]);
     const API_KEY = "22d11a2dc2e969e44e86767ccc60fac8";
@@ -37,7 +37,7 @@ export const TopRatedShows = () => {
         <>
         
             {bestTV.map((tv) => (
-            <Title
+            <TitleSM
             key={tv.id}
             id={tv.id}
             posterPath={tv.poster_path}

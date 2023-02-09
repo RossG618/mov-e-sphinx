@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Title } from "./title";
+// import { Title } from "./title";
+import { TitleSM } from './titles/title-sm';
 
 export const TopRatedMovies = () => {
   const [upcomingTV, setValueTV] = useState([]);
@@ -33,7 +34,7 @@ export const TopRatedMovies = () => {
         <>
         
             {upcomingTV.map((m) => (
-            <Title
+            <TitleSM
               key={m.id}
               id={m.id}
               posterPath={m.poster_path}

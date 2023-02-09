@@ -1,118 +1,66 @@
-import React from "react";
-import "./home.css";
-import Header from "./Header";
+import "../home.css";
+import "../whatsNew/whatsNew.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendarDays,
-  faClock,
   faLocationPin,
-  faPlay,
-  faTv,
-  faVideo,
   faFilm,
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { UpcomingMovies } from "./upcomingMovies";
-// import { UpcomingTV } from "./upcomingTvShows";
-import { TopRatedMovies } from "./topRateMovies";
-import { TopRatedShows } from './topRateShows';
-import { Link } from "react-router-dom";
-//
-export default function Home() {
+import { UpcomingMovies } from "../upcomingMovies";
+// import { UpcomingTV } from "../upcomingTvShows";
+import { TopRatedMovies } from "../topRateMovies";
+import { UpcomingGenre } from "../whatsNew/upcomingActionMovies";
+import { TopRatedShows } from './../topRateShows';
+import { TitleExpand } from "../whatsNew/title-expand";
+import { PreviewNewMovie } from "../whatsNew/previewNewMovies";
+// import { PreviewNewMovie } from "./previewNewMovies";
+// import { PreviewNewTV } from "./previewNewTV";
+
+export default function Movies() {
   
-  //     useEffect(() => {
-
-  // axios.get(`${url}49521?api_key=${API_KEY}`)
-  //       .then(res => {
-  //         console.log(res.data);
-  //         setContent(res.data);
-  //       }).catch(res => console.log(res.data))
-
-  //     }, [])
-
-  // clickHandler = (event) => {
-  //     if (event.keyCode === 13) {
-  //        const query = event.target.value;
-  //        const url = 'https://api.themoviedb.org/3/search/movie';
-  //        const API_KEY = '22d11a2dc2e969e44e86767ccc60fac8';
-  // axios.get(`${url}?api_key=${API_KEY}&query=${query}`)
-  //   .then(res => {
-  //     const title = res.data['results'][0]['title'];
-  //     this.setState({ title });
-
-  //     const popularity = res.data['results'][0]['popularity']
-  //     this.setState({ popularity });
-
-  //     const poster = res.data['results'][0]['poster_path']//Problem
-  //     this.setState({ poster });//Problem
-
-  //   })
-  //     }
-  // }
-
   return (
-    <div>
-      <Header />
-      <div className="home bg-dark d-flex position-relative align-items-center h-100">
-        <div className="hero-content text-bg-dark bg-transparent text-start my-4 py-5 container">
-          <h4 className="fs- fw-bold text-warning">Movi SPHINX</h4>
-          <h1 className="display-3 fw-bold w-50">
-            Unlimted <span className="text-warning yellow">Movies</span>, TV
-            Shows & More
-          </h1>
+    <div className="overflow-hidden pt-5">
+      <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center full-height">
+        <div className="pt-5 container">
+<PreviewNewMovie movieID={'561662'}/>
+          <div className=" col    py-5 "> 
+            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
+              new movies
+            </h2>
 
-          <ul className="d-flex lsStyle-none gap-3 mt-3 mb-5 p-0 align-items-center">
-            <li>
-              <small className="border border-2 fw-bold text-bg-light px-2 py-1 m-0 ">
-                PG-18
-              </small>
-            </li>
-            <li>
-              <small className="text-bg-transparent fw-bold text-light border border-2 px-2 py-1 m-0">
-                HD/SD
-              </small>
-            </li>
-            <span className="d-flex mx-2 gap-2">
-              <li>genres</li>
+            <div className="row row-cols-2 row-cols-lg-3 row-cols-xl-4  row-cols-xxl-6 mx-auto container">
+              <UpcomingMovies />
+            </div>
+          </div>
+          {/* <div className=" col  content-right px-5 pt-5 pb-5">
+            <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3" >
+              new shows
+            </h2>
 
-              <li className="d-flex align-items-center">
-                <FontAwesomeIcon
-                  className="text-warning mx-2"
-                  icon={faCalendarDays}
-                />
-                date
-              </li>
-              <li className="d-flex align-items-center">
-                <FontAwesomeIcon className="text-warning mx-2" icon={faClock} />
-                time
-              </li>
-            </span>
-          </ul>
-          <Link to="/recently-added" className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-4 fw-bold d-flex align-items-center py-2 px-3 gap-2 " style={{width: 'fit-content'}}>
-            <FontAwesomeIcon className="mx-2" icon={faPlay} />
-            watch now
-          </Link>
-          
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3  row-cols-xxl-5  ">
+              <UpcomingTV />
+            </div>
+          </div> */}
+        <div className="opac-box-recent"></div>
         </div>
-        <div className="hero-left py-5"></div>
-        <div className="hero-right py-5"></div>
 
-        <div className="opac-box"></div>
+        <div className="bg-pic-wn-bloodgirl py-5  "></div>
+        <div className="bg-pic-wn-dragon  py-5 position-absolute"></div>
       </div>
 
-      <div className="home2 pb-5 ">
-        <div className="opac-box-06"></div>
+      <div className="home pb-5 ">
+        {/* <div className="opac-box-06"></div> */}
 
-        <div className="container z-23">
-          <div className="justify-content-between d-flex my-5">
+        <div className=" z-23 mx-5 w-75 mx-auto">
+          <div className="justify-content-between d-flex mt-5 pt-5">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
                 4k streaming
               </h6>
-              <h2 className="text-light">Upcoming Movies</h2>
+              <h2 className="text-light text-capitalize">action movies</h2>
             </div>
-            <ul className=" gap-3">
+            {/* <ul className=" gap-3">
               <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 action
               </li>
@@ -125,117 +73,43 @@ export default function Home() {
               <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 horror
               </li>
-            </ul>
+            </ul> */}
+          </div>
+          <UpcomingGenre />
+        </div>
+        <div className="mx-5 z-23 w-75  justify-content-center mx-auto">
+          <div className="justify-content-between d-flex mt- pt-">
+            <div className="text-start">
+              <h6 className="text-uppercase fw-bold text-warning ">
+                4k streaming
+               
+              </h6>
+              <h2 className="text-light text-capitalize">horror movies</h2>
+            </div>
+            
           </div>
 
-          <div className="row row-cols-2 row-cols-md-3  row-cols-xl-5">
-            <UpcomingMovies />
-          </div>
+          <UpcomingGenre />
         </div>
-        <div className="download-offline pt-5">
-          <div className=" d-flex py-5 z-23 row row-cols-1 row-cols-xl-2 container mx-auto ">
-            <div className="d-flex gap-3 mb-5 align-items-base justify-content-center col">
-              <img
-                className="border border-warning img-square "
-                src="https://www.slashgear.com/img/gallery/netflix-4k-streaming-on-macos-big-sur-to-require-a-t2-security-chip/intro-import.jpg"
-                alt="download"
-              />
-              <button className="btn btn-info fw-light  align-self-end rounded border-0 " style={{height:500}}>
-                <p className="rot90">DOWNLOAD</p>{" "}
-                <svg
-                  className="mt-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ fill: "#255, 195, 7" }}
-                  height="48"
-                  width="48"
-                >
-                  <path
-                    xmlns="http://www.w3.org/2000/svg"
-                    d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm13-7.65-9.65-9.65 2.15-2.15 6 6V8h3v18.55l6-6 2.15 2.15Z"
-                  />
-                </svg>
-              </button>
+        <div className="mx-5 z-23 w-75 mx-auto">
+          <div className="justify-content-between d-flex mt- pt-">
+            <div className="text-start">
+              <h6 className="text-uppercase fw-bold text-warning ">
+                4k streaming
+                
+              </h6>
+              <h2 className="text-light text-capitalize">action movies</h2>
             </div>
-            <div className="flex-column text-start col">
-              <span className="d-flex align-items-center mb-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ fill: "rgb(255, 193, 7)" }}
-                  height="48"
-                  width="48"
-                >
-                  <path d="M8 25.5v-3h32v3Z" />
-                </svg>
-                <small className="text-uppercase text-light  fw-bold ">
-                  our services
-                </small>
-              </span>
+            
+          </div>
 
-              <h2 className="text-capitalize fw-bold text-light">
-                download your movies shows watch offline
-              </h2>
-              <p className="text-secondary ">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-                ratione officiis necessitatibus officia dolorem. Dignissimos
-                consequuntur harum, quas, non est nulla repellendus corrupti
-                distinctio ex magni voluptatibus. Nihil, voluptas nisi!
-              </p>
-              <div className="flex-column text-start mt-4">
-                <div className="d-flex gap-3">
-                  <span
-                    className="rounded-circle align-items-center h-25 btn btn-outline-warning btnbtn-outline-info  py-3 mt-3"
-                    style={{ outline: "dashed" }}
-                  >
-                    <FontAwesomeIcon
-                      className="text-light"
-                      icon={faTv}
-                      size="3x"
-                    />
-                  </span>
-                  <div className="flex-column">
-                    <h4 className="text-capitalize text-light fw-bold">
-                      enjoy on your TV
-                    </h4>
-                    <p className="text-secondary ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quod, voluptates tempore hic voluptatum aliquid, minus
-                      voluptatibus atque dicta, autem pariatur ut iure natus
-                      facilis ratione.
-                    </p>
-                  </div>
-                </div>
-                <hr />
-                <div className="d-flex gap-3">
-                  <span
-                    className="rounded-circle align-items-center h-25 btn btn-outline-warning py-3 mt-3"
-                    style={{ outline: "dashed" }}
-                  >
-                    <FontAwesomeIcon
-                      className="text-light"
-                      icon={faVideo}
-                      size="3x"
-                    />
-                  </span>
-                  <div className="flex-column">
-                    <h4 className="text-capitalize text-light fw-bold">
-                      watch anywhere
-                    </h4>
-                    <p className="text-secondary ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quod, voluptates tempore hic voluptatum aliquid, minus
-                      voluptatibus atque dicta, autem pariatur ut iure natus
-                      facilis ratione.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <UpcomingGenre />
         </div>
+       
       </div>
 
-      <div className="top-rated bg-dark ">
-        <div className="container py-5">
+      <div className="top-rated ">
+        <div className="container py-5 z-23">
           <small className="text-warning text-uppercase">
             online streaming
           </small>
@@ -244,33 +118,31 @@ export default function Home() {
           </h2>
           <div className="my-5">
             <ul>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 all movies
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 action
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 comedy
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 horror
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded border shadow mx-2 mb-2 text-uppercase fw-bold text-bg-light">
                 sci-fi
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5">
+          <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 ">
             <TopRatedMovies />
-
-
           </div>
         </div>
       </div>
 
-      <div className="top-rated-tv bg-secondary ">
-        <div className="container py-5">
+      <div className="top-rated-tv ">
+        <div className="container py-5 z-23">
           <small className="text-warning text-uppercase">
             online streaming
           </small>
@@ -279,33 +151,31 @@ export default function Home() {
           </h2>
           <div className="my-5">
             <ul>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                all tv shows
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
+                all shows
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 action
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 comedy
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 horror
               </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
+              <li className="btn rounded shadow mx-2 mb-2 text-uppercase fw-bold text-bg-dark">
                 sci-fi
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5 ">
+          <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
             <TopRatedShows/>
-
-            
           </div>
         </div>
       </div>
 
-      <div className="trial ">
-        <div className="container d-flex align-items-center justify-content-around py-4">
+      <div className="trial z-23">
+        <div className="container d-flex align-items-center justify-content-around py-3">
           <div>
             <h2 className="text-uppercase fw-bold">
               start trial first{" "}
@@ -328,8 +198,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="footer bg-dark overflow-idden ">
-        <div className="container py-4 row row-cols-4 mx-auto d-flex">
+      <div className="footer bg-dark overflow-idden z-23">
+        <div className="container pt-4 row row-cols-4 mx-auto d-flex">
           <div className="col flex-column">
             <div className="flex-column text-start">
               <span className="d-flex align-items-center gap-1">

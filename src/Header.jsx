@@ -18,10 +18,10 @@ return(
             <ul className="navbar-nav gap-4 ls-1px">
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder text-warning"> Home</li></a>
                <NavLink to="/recentlyAdded" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">what's new</li></NavLink>      
-               <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">movie</li></a>       
+               <NavLink to="/movies" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">movie</li></NavLink>      
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">tv show</li></a>
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">pricing</li></a>
-               <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">contact</li></a>
+               <NavLink to="/favorites" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">favorites</li></NavLink>      
             </ul>
         </div>
         
