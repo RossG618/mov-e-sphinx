@@ -7,28 +7,33 @@ import RecentlyAdded from './whatsNew/recentlyAdded';
 import Header from './Header';
 import Movies from './movies/movies';
 import { Movie } from './watchNow/movieInfoPage';
-import { useState } from 'react';
 import { Pricing } from './pricing';
 import Favorites from './favorites';
-// import { TitleSM } from './titles/title-sm';
-
-
+import TV from './TV/tvShows';
+import { ShowInfoPage } from './TV/showInfoPage';
+import Footer from './Footer';
+import { useState } from 'react';
 function App() {
+
   return (
     <div className="App">
       <Router>
         <Header />
      < Routes>
-     <Route path={`/favorites`} element={<Favorites  />}  />
+     {/* <Route path={`/favorites`} element={<Favorites />}  /> */}
      <Route path={`/pricing`} element={<Pricing />}/>
      <Route path={`/movies/:id`} element={<Movie/>}/>
      <Route path={`/movies`} element={<Movies />}/>
+     <Route path={`/tv/:id`} element={<ShowInfoPage/>}/>
+     <Route path={`/tv`} element={<TV />}/>
      <Route path='/recentlyAdded' element={<RecentlyAdded />}/>
      <Route exact path='/' element={<Home />}/>
+     {/* <Route  path='*' element={<ErrorPage />}/> */}
+
      
 
      </Routes>
-
+<Footer/>
       </Router>
     </div>
   );

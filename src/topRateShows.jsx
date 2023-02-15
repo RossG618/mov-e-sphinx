@@ -1,44 +1,32 @@
-import axios from "axios";
+import _ from "lodash";
 import { useState, useEffect } from "react";
-// import { Title } from "./title";
-import { TitleSM } from './titles/title-sm';
+import {  getTopRatedTVsPage1 } from "./SERVICES/tmdbService";
+import { TitleSM } from "./titles/title-sm";
 export const TopRatedShows = () => {
-    const [bestTV, setBestTV] = useState([]);
-    const API_KEY = "22d11a2dc2e969e44e86767ccc60fac8";
+  const [bestTV, setBestTV] = useState([]);
 
-    useEffect(() => {
-        const tvURL = `https://api.themoviedb.org/3/tv/`;
-    const tvURLs = [
-      `${tvURL}100088?api_key=${API_KEY}`,
-      `${tvURL}1396?api_key=${API_KEY}`,
-      `${tvURL}94605?api_key=${API_KEY}`,
-      `${tvURL}119051?api_key=${API_KEY}`,
-      `${tvURL}66732?api_key=${API_KEY}`,
-      `${tvURL}207863?api_key=${API_KEY}`,
-    ];
-
-    const tvRequests = tvURLs.map((url) => axios.get(url));
-
-    axios
-      .all(tvRequests)
-      .then((responses) => {
-        responses.forEach((res) => {
-          //  console.log(responses)
-          //   bestTV.push(res.data);
-          setBestTV((bestTV) => [...bestTV, res.data]);
-          // console.log(res.data);
+  //pop
+  //upcom
+  //latest
+  useEffect(() => {
+    getTopRatedTVsPage1()
+    .then((responses) => {
+        console.log("hi", responses);
+        _.forEach(_.take(responses.data.results, 10), (res) => {
+          setBestTV((bestTV) => [...bestTV, res]);
         });
       })
       .catch((res) => console.log(res));
+  }, []);
 
-    },[])
+  return (
+    <>
+      {bestTV.map((tv) => (
+        <div className="pb-5" key={tv.id}>
 
-    return(
-        <>
-        
-            {bestTV.map((tv) => (
-            <TitleSM
-            key={tv.id}
+
+          <TitleSM
+            type={"tv"}
             id={tv.id}
             posterPath={tv.poster_path}
             name={tv.name}
@@ -47,7 +35,8 @@ export const TopRatedShows = () => {
             popularity={tv.popularity}
             homePath={tv.homepage}
           />
-          ))}
-        </>
-    )
-}
+        </div>
+      ))}
+    </>
+  );
+};

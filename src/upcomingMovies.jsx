@@ -1,52 +1,39 @@
-import axios from "axios";
-import { useEffect, useState } from 'react';
-// import { Title } from "./title";
-import { TitleSM } from './titles/title-sm';
+import { useEffect, useState } from "react";
+import {getUpcomingMoviesPage1 } from "./SERVICES/tmdbService";
+import { TitleSM } from "./titles/title-sm";
+import _ from "lodash";
 export const UpcomingMovies = () => {
-    const [upcoming, setValue] = useState([]);
+  const [upcoming, setValue] = useState([]);
 
-    useEffect(() => {
-        const movieURL = `https://api.themoviedb.org/3/movie/`;
-        const API_KEY = "22d11a2dc2e969e44e86767ccc60fac8";
-        const movieURLs = [
-          `${movieURL}804150?api_key=${API_KEY}`,
-          `${movieURL}9552?api_key=${API_KEY}`,
-          `${movieURL}49521?api_key=${API_KEY}`,
-          `${movieURL}436270?api_key=${API_KEY}`,
-          `${movieURL}254128?api_key=${API_KEY}`,
-          `${movieURL}640146?api_key=${API_KEY}`,
-        ];
-    
-        const requests = movieURLs.map((url) => axios.get(url));
-    
-        axios
-          .all(requests)
-          .then((responses) => {
-            responses.forEach((res) => {
-              //  console.log(responses)
-              //   upcoming.push(res.data);
-              setValue((upcoming) => [...upcoming, res.data]);
-              //   console.log("upcoming", upcoming);
-            });
-          })
-          .catch((res) => console.log(res));
+  useEffect(() => {
+    getUpcomingMoviesPage1()
+      .then((responses) => {
+        _.forEach(_.take(responses.data.results, 6), (res) => {
+          //   upcoming.push(res.data);
+          setValue((upcoming) => [...upcoming, res]);
+          //   console.log("upcoming", upcoming);
+        });
+      })
+      .catch((res) => console.log(res));
+  }, []);
 
-    },[])
+  return (
+    <>
 
-    return(
-        <>
-            {upcoming.map((m) => (
-            <TitleSM
-              key={m.id}
-              id={m.id}
-              posterPath={m.poster_path}
-              name={m.title}
-              firstDate={m.release_date}
-              runtime={m.runtime}
-              popularity={m.popularity}
-              homePath={m.homepage}
-            />
-          ))}
-        </>
-    )
-}
+      {upcoming.map((m, index) => (
+    <div className=" pb-3" key={m.id}>
+        <TitleSM
+        type={"movies"}        
+        id={m.id}
+        posterPath={m.poster_path}
+        name={m.title}
+        firstDate={m.release_date}
+        runtime={m.runtime}
+        popularity={m.popularity}
+        homePath={m.homepage}
+        />
+        </div>
+        ))}
+    </>
+  );
+};

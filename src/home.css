@@ -100,39 +100,7 @@ height: 73vh;
     background-size: cover;
     margin: 0;
 }
-.poster1{
-    background-position: center;
-    background-image: url(./images/theSpartan_981964555469062206_2efd8fae-bd5e-403a-a078-01535cfdd37a.png);
-}
-.poster2{
-    background-position: center;
-    background-image: url(./images/black\ adam.jpg);
-}
-.poster3{
-    background-position: center;
-    background-image: url(./images/exorcist.jpg);
-}
-.poster4{
-    background-position: center;
-    background-image: url(./images/man\ of\ steel.jpg);
-}
 
-.poster-tv1{
-    background-position: center;
-    background-image: url('https://assets-prd.ignimgs.com/2022/02/18/house-of-the-dragon-button-02-1645217002655.jpg');
-}
-.poster-tv2{
-    background-position: center;
-    background-image: url(./images/black\ adam.jpg);
-}
-.poster-tv3{
-    background-position: center;
-    background-image: url(./images/exorcist.jpg);
-}
-.poster-tv4{
-    background-position: center;
-    background-image: url(./images/man\ of\ steel.jpg);
-}
 .opac-box-06{
     background: black;
     opacity: 0.7;
@@ -171,4 +139,12 @@ fill: #fff;
     max-width: 500px;
     max-height: 500px;
     object-fit: cover;
+}
+.top-rated-tv{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+    /* background-color: #29293a; */
 }

@@ -13,7 +13,7 @@
 }
 .mobile{
     flex-direction: row;
-
+/* justify-content: center; */
   }
   .bars {
     width: 8rem;
@@ -38,7 +38,7 @@
     }
     
   }
-  @media screen and (max-width: 1020px){
+  @media screen and (max-width: 1080px){
     .brand-nav{
       width: 100%;
         justify-content: space-between !important;
@@ -132,3 +132,8 @@
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
 }
+/* @media screen and (min-width: 1200px){
+  .mobile{
+justify-content: space-around !important;
+  }
+} */

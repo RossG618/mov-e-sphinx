@@ -5,7 +5,7 @@ import "../title.css";
 import { useState } from "react";
 //
 export const list = [];
-export const TitleSM = ({
+export const Title = ({
   id,
   type,
   posterPath,
@@ -41,7 +41,7 @@ export const TitleSM = ({
   };
   return (
     <div
-      className="col-11 bg-dark z-23 upcoming_poster-div align-items-center overflow-hidden"
+      className="col bg-dark z-23 upcoming_poster-div align-items-center overflow-hidden"
       key={id}
       id={id}
     >

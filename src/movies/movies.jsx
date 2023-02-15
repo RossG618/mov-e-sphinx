@@ -12,18 +12,14 @@ import { UpcomingMovies } from "../upcomingMovies";
 import { TopRatedMovies } from "../topRateMovies";
 import { UpcomingGenre } from "../whatsNew/upcomingActionMovies";
 import { TopRatedShows } from './../topRateShows';
-import { TitleExpand } from "../whatsNew/title-expand";
-import { PreviewNewMovie } from "../whatsNew/previewNewMovies";
-// import { PreviewNewMovie } from "./previewNewMovies";
-// import { PreviewNewTV } from "./previewNewTV";
+import { MovieShowcase } from "../whatsNew/movieShowcase";
 
 export default function Movies() {
-  
   return (
     <div className="overflow-hidden pt-5">
       <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center full-height">
         <div className="pt-5 container">
-<PreviewNewMovie movieID={'561662'}/>
+          <MovieShowcase movieID={'561662'}/>
           <div className=" col    py-5 "> 
             <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
               new movies

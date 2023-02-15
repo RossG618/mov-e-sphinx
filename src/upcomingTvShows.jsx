@@ -1,52 +1,45 @@
-import axios from "axios";
+import _ from "lodash";
 import { useState, useEffect } from "react";
+import { getPopularTVsPage1 } from "./SERVICES/tmdbService";
 // import { Title } from "./title";
 import { TitleSM } from './titles/title-sm';
 export const UpcomingTV = () => {
-    const [bestTV, setBestTV] = useState([]);
-    const API_KEY = "22d11a2dc2e969e44e86767ccc60fac8";
-
+    const [bestTV, setBestTV] = useState([]);        
     useEffect(() => {
-        const tvURL = `https://api.themoviedb.org/3/tv/`;
-    const tvURLs = [
-      `${tvURL}100088?api_key=${API_KEY}`,
-      `${tvURL}1396?api_key=${API_KEY}`,
-      `${tvURL}94605?api_key=${API_KEY}`,
-      `${tvURL}119051?api_key=${API_KEY}`,
-      `${tvURL}66732?api_key=${API_KEY}`,
-      `${tvURL}207863?api_key=${API_KEY}`,
-    ];
-
-    const tvRequests = tvURLs.map((url) => axios.get(url));
-
-    axios
-      .all(tvRequests)
-      .then((responses) => {
-        responses.forEach((res) => {
-          //  console.log(responses)
-          //   bestTV.push(res.data);
-          setBestTV((bestTV) => [...bestTV, res.data]);
-          // console.log(res.data);
-        });
-      })
-      .catch((res) => console.log(res));
+      getPopularTVsPage1()
+        .then((responses) => {
+          const store = responses.data.results;
+          _.forEach(_.take(_.filter(store, {original_language: 'en'}), 6), (res) => {
+            //  console.log(responses)
+            //   bestTV.push(res.data);
+            setBestTV((bestTV) => [...bestTV, res]);
+            console.log('hi', res);
+          });
+        })
+        .catch((res) => console.log(res));
+     
 
     },[])
+
 
     return(
         <>
         
             {bestTV.map((tv) => (
-            <TitleSM
-            key={tv.id}
-            id={tv.id}
-            posterPath={tv.poster_path}
-            name={tv.name}
-            firstDate={tv.first_air_date}
-            endDate={tv.last_air_date}
-            popularity={tv.popularity}
-            homePath={tv.homepage}
-          />
+              <div className="pb-3" key={tv.id}>
+                <TitleSM
+                type={'tv'}                
+                id={tv.id}
+                posterPath={tv.poster_path}
+                name={tv.name}
+                firstDate={tv.first_air_date}
+                endDate={tv.last_air_date}
+                popularity={tv.popularity}
+                homePath={tv.homepage}
+              />
+
+
+              </div>
           ))}
         </>
     )
