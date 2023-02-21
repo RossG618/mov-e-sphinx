@@ -1,12 +1,6 @@
 import "../home.css";
 import "../whatsNew/whatsNew.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationPin,
-  faFilm,
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+
 import { UpcomingMovies } from "../upcomingMovies";
 // import { UpcomingTV } from "../upcomingTvShows";
 import { TopRatedMovies } from "../topRateMovies";

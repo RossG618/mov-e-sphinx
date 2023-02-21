@@ -1,18 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faFilm, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faFilm } from "@fortawesome/free-solid-svg-icons";
 import './nav.css';
-import { Link, Route, } from "react-router-dom";
 import { useState } from 'react';
 import {SearchBar} from './searchBar';
-import Login from "./Login/login";
-import { createContext } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import {LoginButton} from "./Login/login";
-import {LogoutButton} from './Login/login';
+// import {LogoutButton} from './Login/login';
 export default function Header() {
     const [showNav, setNav] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
-    const  {loginWithRedirect, logout} = useAuth0();
+    // const [loggedIn, setLoggedIn] = useState(false);
 return(
     <nav className="navbar navbar-expand-lg navbar-body bg-dark shadow  position-fixed  mobile-navbar">
     <div className=" container-fluid justify-content-between mx-auto mobile d-flex
@@ -37,13 +32,11 @@ return(
         </div>
         </div>
         <div className="align-items-center justify-content-center">
-            {loggedIn ?
-           <LogoutButton/>
-            :
+           
             
             <LoginButton />
 
-            }
+            
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {getUpcomingMoviesPage1, getRelatedMovies } from "../SERVICES/tmdbService";
+import {getRelatedMovies } from "../SERVICES/tmdbService";
 import { TitleSM } from "../titles/title-sm";
 import _ from "lodash";
 export const RelatedMovies = ({movieID}) => {
@@ -15,7 +15,7 @@ export const RelatedMovies = ({movieID}) => {
         });
       })
       .catch((res) => console.log(res));
-  }, []);
+  }, [movieID]);
 
   return (
     <>

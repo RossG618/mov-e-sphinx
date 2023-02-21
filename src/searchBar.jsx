@@ -4,12 +4,10 @@ import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faX } from "@fortawesome/free-solid-svg-icons";
 import './searchItem.css'
-import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 
 export const SearchBar = ({nav}) => {
   // const [data, setData] = useState([]);
-  const history = useNavigate();
   const [value, setValue] = useState();
   const [results, setresults] = useState([]);
   
