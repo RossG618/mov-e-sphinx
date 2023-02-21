@@ -10,7 +10,7 @@ root.render(
     domain="dev-zjsv2b3h2q5o5qrw.us.auth0.com"
     clientId="SCHvX2eekP7x5i0ykOSNIgYmNVvK7sj4"
     authorizationParams={{
-      redirect_uri: 'https://localhost:3000'
+      redirect_uri: 'https://movi-sphinx.netlify.app/'
     }}
   >
 
