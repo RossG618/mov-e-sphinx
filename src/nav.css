@@ -11,10 +11,7 @@
 .yellowHov:focus{
     text-decoration: #2c3 1px underline ;
 }
-.mobile{
-    flex-direction: row;
-/* justify-content: center; */
-  }
+
   .bars {
     width: 8rem;
     padding: 0.5rem 1rem;
@@ -74,32 +71,41 @@
       /* border-radius: 10px; */
     }
     #hide{
-        transition: all 0.5s ease-in-out;
+        transition: all 0.6s ease-in-out;
+     transform: translate(0, -400px);    
+
         height: 0vh;
         z-index: -1;
         flex-direction: column;
       opacity: 0;
     }
-  
+  #reveal > ul{
+    flex-direction: column;
+  }
     #reveal{
-     transition: all 0.5s ease-in-out;
+     transition: all 0.6s ease-in-out;
      transform: translate(0, 0);    
      flex-direction: column;
      opacity: 1;
-     height: 100%;
+     height: 37vh;
      z-index: 100;
     }
     
+    .search{
+      padding: 1rem 0 0 0 ;
+    }
   }
   
-  @media screen and (min-width: 1020px){
+  @media screen and (min-width: 1080px){
     .menu-mobile{
         display: none;
         top: 0;
         z-index: 23;
         left: 0;
     }
-    
+    .nav-drop{
+      display: flex;
+    }
   }
 #logo{
     z-index: 44;

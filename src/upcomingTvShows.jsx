@@ -1,12 +1,12 @@
 import _ from "lodash";
 import { useState, useEffect } from "react";
-import { getPopularTVsPage1 } from "./SERVICES/tmdbService";
+import { getPopularTVs } from "./SERVICES/tmdbService";
 // import { Title } from "./title";
 import { TitleSM } from './titles/title-sm';
 export const UpcomingTV = () => {
     const [bestTV, setBestTV] = useState([]);        
     useEffect(() => {
-      getPopularTVsPage1()
+      getPopularTVs(2)
         .then((responses) => {
           const store = responses.data.results;
           _.forEach(_.take(_.filter(store, {original_language: 'en'}), 6), (res) => {
@@ -35,7 +35,7 @@ export const UpcomingTV = () => {
                 firstDate={tv.first_air_date}
                 endDate={tv.last_air_date}
                 popularity={tv.popularity}
-                homePath={tv.homepage}
+                // homePath={tv.backdrop_path}
               />
 
 

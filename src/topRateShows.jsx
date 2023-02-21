@@ -33,7 +33,7 @@ export const TopRatedShows = () => {
             firstDate={tv.first_air_date}
             endDate={tv.last_air_date}
             popularity={tv.popularity}
-            homePath={tv.homepage}
+            // homePath={tv.backdrop_path}
           />
         </div>
       ))}

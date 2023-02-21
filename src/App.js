@@ -8,11 +8,12 @@ import Header from './Header';
 import Movies from './movies/movies';
 import { Movie } from './watchNow/movieInfoPage';
 import { Pricing } from './pricing';
-import Favorites from './favorites';
+// import Favorites from './favorites';
 import TV from './TV/tvShows';
 import { ShowInfoPage } from './TV/showInfoPage';
 import Footer from './Footer';
-import { useState } from 'react';
+// import Login from './Login/login';
+
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
      <Route path={`/tv/:id`} element={<ShowInfoPage/>}/>
      <Route path={`/tv`} element={<TV />}/>
      <Route path='/recentlyAdded' element={<RecentlyAdded />}/>
+     {/* <Route path='/login' element={<Login />}/> */}
      <Route exact path='/' element={<Home />}/>
      {/* <Route  path='*' element={<ErrorPage />}/> */}
 

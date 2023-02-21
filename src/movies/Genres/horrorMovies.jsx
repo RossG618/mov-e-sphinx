@@ -2,56 +2,67 @@ import { useState, useEffect } from "react";
 import _ from "lodash";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { TitleSM } from "./../titles/title-sm";
-import { getPopularMovies, getPopularMoviesPage1 } from "../SERVICES/tmdbService";
-import { Title } from "../titles/title";
-export const UpcomingGenre = () => {
+import { TitleSM } from "../../titles/title-sm";
+import { Title } from "../../titles/title";
+import { getHorrorMovies } from '../../SERVICES/tmdbService';
+
+export const HorrorMovies = () => {
   //   const [actionCara, setActionCara] = useState([]);
   const [upcomAction, setUpcomAction] = useState([]);
-
-  // useEffect(() => {
-  //   getUpcomingMovies()
-  //     .then((resp) => {
-  //       let store = resp.data.results;
-  //       store.forEach((res) => {
-  //         setUpcomAction((upcomAction) => [...upcomAction, res]);
-  //       });
-  //     })
-  //     .catch((res) => console.log(res.data));
-  // }, []);
   useEffect(() => {
-    getPopularMoviesPage1()
-      .then((resp) => {
-        let store = _.take(resp.data.results,6);
-        _.forEach(store, (res) => {
-          setUpcomAction((upcomAction) => [...upcomAction, res]);
-        });
-      })
-      .catch((res) => console.log(res.data));
-    getPopularMovies(2)
-      .then((resp) => {
-        let store = _.take(resp.data.results,6);
-        _.forEach(store, (res) => {
-          setUpcomAction((upcomAction) => [...upcomAction, res]);
-        });
-      })
-      .catch((res) => console.log(res.data));
-    getPopularMovies(3)
-      .then((resp) => {
-        let store = _.take(resp.data.results,6);
-        _.forEach(store, (res) => {
-          setUpcomAction((upcomAction) => [...upcomAction, res]);
-        });
-      })
-      .catch((res) => console.log(res.data));
-    getPopularMovies(4)
-      .then((resp) => {
-        let store = _.take(resp.data.results,6);
-        _.forEach(store, (res) => {
-          setUpcomAction((upcomAction) => [...upcomAction, res]);
-        });
-      })
-      .catch((res) => console.log(res.data));
+    console.log("useEffect");
+
+        // const page1 = getPopularMoviesPage1();
+        // const page2 = getPopularMovies(2);
+        // const page3 = getPopularMovies(3);
+        // const page4 = getPopularMovies(4);
+        // const page5 = getPopularMovies(5);
+        // Promise.all([page1, page2, page3, page4, page5])
+        getHorrorMovies()
+        getHorrorMovies(2)
+        .then((promises) => {
+            const items = _.orderBy(promises.data.results, 'popularity', 'desc');
+            const filteredItems = _.filter(items, {
+              original_language: "en"
+            });
+            setUpcomAction(filteredItems)
+          })
+          .catch((promises) => console.log(promises.data))
+  //       Promise.all([ getHorrorMovies(2), getHorrorMovies(4)])
+  //       .then(promises => {
+
+        
+  //         let rez = [];
+  //         _.forEach(promises, function (promise) {
+  //           const items = _.orderBy(promise.data.results, 'popularity', 'desc');
+  //           const filteredItems = _.filter(items, {
+  //             original_language: "en"
+  //           });
+            
+  //           console.log('response', items, filteredItems);
+  //           rez.push(...filteredItems);            
+  //         });   
+          
+  //         setUpcomAction([...rez]);
+  //         console.log('horor', upcomAction)
+  //       })
+  //       .catch((res) => console.log(res));
+    
+  // }, []);
+  // useEffect(() => {
+  //    getHorrorMovies()
+  //     .then((resp) => {
+  //         _.forEach(res => {
+  //           console.log('resp', res);
+
+  //           let store = _.filter(_.take(res.data.results, 6), {genre_ids: 35});
+  //           _.forEach(store, (response) => {
+  //             setUpcomAction((upcomAction) => [...upcomAction, response]);
+  //           });
+  //         })
+  //         .catch((res) => console.log(res.data));
+  //       })
+   
   }, []);
 
   const [index, setIndex] = useState(0);
@@ -80,7 +91,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
-                // homePath={m.backdrop_path}
+                homePath={m.homepage}
               />
             </div>
           ))}
@@ -98,7 +109,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
-                // homePath={m.backdrop_path}
+                homePath={m.homepage}
               />
             </div>
           ))}
@@ -116,7 +127,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
-                // homePath={m.backdrop_path}
+                homePath={m.homepage}
               />
             </div>
           ))}
@@ -133,7 +144,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
-                // homePath={m.backdrop_path}
+                homePath={m.homepage}
               />
             </div>
           ))}

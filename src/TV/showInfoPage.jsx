@@ -2,9 +2,9 @@ import '../watchNow/movie.css';
 // import { PreviewNewMovie } from './../whatsNew/previewNewMovies';
 import { UpcomingGenre } from '../whatsNew/upcomingActionMovies';
 import { useParams } from 'react-router-dom';
-import { TvShowcase } from '../whatsNew/tvShowcase';
-import { UpcomingTV } from './../upcomingTvShows';
+import { TvShowcase } from './tvShowcase';
 import { TopRatedShows } from '../topRateShows';
+import { RelatedShows } from './RelatedShows';
 export const ShowInfoPage = () => {
   
   const {id} = useParams();
@@ -18,7 +18,7 @@ export const ShowInfoPage = () => {
 
       <h3 className='text-warning text-capitalize fw-bold mt-5'>related Shows</h3>
       <div className=" mt-5 row row-cols-2 row-cols-md-3 row-cols-xl-4  row-cols-xxl-6 container mx-auto ">
-      <UpcomingTV/>
+      <RelatedShows tvID={id}/>
       </div>
 
       <h3 className='text-warning text-capitalize fw-bold mt-5'>new / upcoming</h3>

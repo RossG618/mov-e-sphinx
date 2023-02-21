@@ -1,5 +1,6 @@
 import '../home.css';
 import '../title.css'
+import _ from 'lodash';
 import { useState, useEffect } from "react";
 import { getMovie } from '../SERVICES/tmdbService';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,10 +27,10 @@ export const MovieShowcase = ({movieID}) => {
        setPreview(res.data);
      })
      .catch((res) => console.log(res));
- }, []);
+ }, [movieID]);
  
   return (
-    <div className="upcoming_post-div p-3 mt-5 z-23 d-flex border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
+    <div className="upcoming_post-div p-3  z-23 d-flex border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
       <div className="col pb-2">
         <a href={preview.homepage}>
           <img
@@ -50,7 +51,8 @@ export const MovieShowcase = ({movieID}) => {
           <p className="text-secondary fw-bold m-0 ">
             HD
           </p>
-         
+          <small className="border rounded-2 p-0 px-2 mx-1">{_.take(preview.release_date, 4)}</small>
+
 
           <span className="d-flex gap-2 justify-content-end ">
             {preview.runtime && <small className="mx-2">{preview.runtime} min</small>}

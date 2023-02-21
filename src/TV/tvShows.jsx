@@ -10,14 +10,14 @@ import {
 import { UpcomingMovies } from "../upcomingMovies";
 // import { UpcomingTV } from "../upcomingTvShows";
 import { UpcomingGenre } from "../whatsNew/upcomingActionMovies";
-import { TvShowcase } from "../whatsNew/tvShowcase";
+import { TvShowcase } from "./tvShowcase";
 import { TopRatedMovies } from "../topRateMovies";
 import { TopRatedShows } from "../topRateShows";
 export default function TV() {
   return (
     <div className="overflow-hidden pt-5">
       <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center full-height">
-        <div className="pt-5 container ">
+        <div className="pt-2 container ">
           <TvShowcase tvID={'100088'}/>
           <div className=" col    py-5 "> 
             <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">

@@ -40,7 +40,7 @@ export const TopRatedMovies = () => {
             firstDate={m.release_date}
             runtime={m.runtime}
             popularity={m.popularity}
-            homePath={m.homepage}
+            // homePath={m.backdrop_path}
           />
         </div>
       ))}

@@ -227,7 +227,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5">
+          <div className=" row row-cols-3  row-cols-md-4 row-cols-xl-4 row-cols-xxl-5">
             <TopRatedMovies />
 
 
@@ -262,7 +262,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="row row-cols-5 ">
+          <div className="row row-cols-3  row-cols-md-4 row-cols-xl-4 row-cols-xxl-5 ">
             <TopRatedShows/>
 
             

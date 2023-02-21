@@ -72,10 +72,9 @@ export const TitleSM = ({
 
                 />
                 )}
-                
         <a href={homePath}>
           <img
-            className="w-100 poster"
+            className="w-100 poster "
             src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
             alt="poster"
             

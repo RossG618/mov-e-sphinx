@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
- import axios from "axios";
+import _ from 'lodash';
+
  import '../home.css';
   import { useState, useEffect } from "react";
 import { getTvShow } from '../SERVICES/tmdbService';
@@ -26,9 +27,9 @@ export const TvShowcase = ({tvID}) => {
        setPreview(res.data);
      })
      .catch((res) => console.log(res));
- }, []);
+ }, [tvID]);
   return (
-    <div className="upcoming_post-div p-3 mt-5 z-23 d-flex border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
+    <div className="upcoming_post-div p-3 z-23 d-flex border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
       <div className="col pb-2">
         <a href={preview.homepage}>
           <img
@@ -49,6 +50,7 @@ export const TvShowcase = ({tvID}) => {
           <p className="text-secondary fw-bold m-0 ">
             HD
           </p>
+          <small className="border rounded-2 p-0 px-2 mx-1">{_.take(preview.first_air_date, 4)}</small>
           
 
           <span className="d-flex gap-2 justify-content-end ">

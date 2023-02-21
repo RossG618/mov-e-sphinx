@@ -2,30 +2,45 @@ import { useState, useEffect } from "react";
 import { getSearchMovieQuery, getSearchTvQuery } from "./SERVICES/tmdbService";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { lineTextStyle } from "./whatsNew/tvShowcase";
+import { faThumbsUp, faX } from "@fortawesome/free-solid-svg-icons";
 import './searchItem.css'
+import { useNavigate } from "react-router-dom";
 // import axios from "axios";
-export const SearchBar = () => {
+
+export const SearchBar = ({nav}) => {
   // const [data, setData] = useState([]);
+  const history = useNavigate();
   const [value, setValue] = useState();
   const [results, setresults] = useState([]);
-  let newData = [];
-
+  
+   const lineTextStyleSearch = {
+    maxWidth: '100%',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 5,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  };
+   const lineTextStyle2 = {
+    maxWidth: '100%',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  };
 
   useEffect(() => {
     console.log("useEffect");
-    newData = [];
     if (value) {
       let searchMovie = getSearchMovieQuery(value);
       let searchTv = getSearchTvQuery(value);
-      // setData((data) => [...newData]);
       Promise.all([searchMovie, searchTv])
         .then((promises) => {
           let rez = [];
 
           _.forEach(promises, function (promise) {
-            const items = _.take(promise.data.results, 12);
+            const items = _.take(_.orderBy(promise.data.results, 'popularity', 'desc'), 12);
             const filteredItems = _.filter(items, {
               original_language: "en",
             });
@@ -44,46 +59,56 @@ export const SearchBar = () => {
     e.preventDefault();
     setValue(e.target.value);
   };
-
+const clear = () => {
+}
   return (
-    <div className="position-relative">
-      <div className="rounded-pill border border-2 border-secondary p-0 d-flex">
-        <input
+    <div className="position-relative ">
+      <div class="input-group d-flex rounded-pill border border-2 border-secondary p-0 d-flex overflow-hidden align-items-center">
+      <input
           style={{ outline: "none", border: "none" }}
-          className="rounded-pill text-bg-dark px-2 overflow-hidden"
+          id='search'
+          className=" rounded-pill text-bg-dark px-2 overflow-hidden "
           placeholder="search title"
           onChange={(e) => handleSubmit(e)}
+          onClick={() => nav(false)}
           type="text"
         />
-      </div>
-      <div className="position-absolute searchList">
+  <div class="input-group-append ">
+    <span role='button' class="input-group-text bg-transparent border-0" style={{width: 'fit-content'}} id="basic-addon2" onClick={clear}><FontAwesomeIcon inverse icon={faX}/></span>
+  </div>
+</div>
+      
+           
+     {value && <div className="position-absolute flix-bg searchList py-1 shadow"  style={{ width: "420px" }}>
         {results.map((item) => (
           <div
-            className="upcoming_post-div p-3 mt-5 z-23 d-flex border-secondary align-items-center justify-content-center w-50"
-            key={item.id}
-            id={item.id}
-            style={{ width: "fit-content" }}
+          className="upcoming_post-div px-1 pb-3  w-100 z-23 d-flex border-secondary align-items-start justify-content-center row row-cols-2"
+          // onClick={history()}
+          key={item.id}
+          id={item.id}
+          // onClick={useNavigate(`/${type}/${id}`)}
           >
-            <div className="col pb-2">
+            <div className="col-3 p px-0">
               <a href={item.homepage}>
                 <img
-                  className="img-fluid shadow col-1"
+                  className="img-fluid shadow w-100 poster"
                   src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
                   alt="poster"
                 />
               </a>
             </div>
-            <div className="lsStyle-none justify-content-between text-light mt-3 px-5 col">
-              <div className="text-start d-flex row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2">
+            <div className="lsStyle-none justify-content-between  text-light  col-8">
+            {/* <div className="text-start d-flex row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2"> */}
+              <div className="text-start ">
                 <a href={item.homepage} className="col">
-                  <p className="text-light fs-3 fw-bold text-capitalize mb-2 ">
+                  <small className="text-light  fw-bold text-capitalize " style={lineTextStyle2}>
                     {item.title || item.name}
-                  </p>
+                  </small>
                 </a>
                 <div className="d-flex align-items-center text-end gap-2 mx-auto col">
-                  <p className="text-secondary fw-bold m-0 ">HD</p>
+                  <small className="text-secondary fw-bold m-0 fs6">HD</small>
                   <small className="text-secondary m-0 ">
-                    {item.release_date || item.first_air_date}
+                    {_.take(item.release_date || item.first_air_date, 4)}
                   </small>
                   <span className="d-flex gap-2 justify-content-end ">
                     {item.runtime && (
@@ -100,15 +125,15 @@ export const SearchBar = () => {
                 </div>
               </div>
               <div className="row ">
-                <div className="mt-3 text-start">
-                  <h5 className="mb-3 text-warning text-center">
+                <div className=" text-start">
+                  <h5 className=" text-warning text-center">
                     {item.tagline}
                   </h5>
-                  <p className="text-start gap-3" style={lineTextStyle}>
+                  <small className="text-start gap-3 px-1" style={lineTextStyleSearch}>
                     {item.overview}
-                  </p>
+                  </small>
                 </div>
-                <button className="btn btn-info fw-light align-self-end rounded border-0 w-50 mx-auto">
+                {/* <button className="btn btn-info fw-light align-self-end rounded border-0 w-50 mx-auto">
                   <p className="m-0">DOWNLOAD</p>{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -121,12 +146,12 @@ export const SearchBar = () => {
                       d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm13-7.65-9.65-9.65 2.15-2.15 6 6V8h3v18.55l6-6 2.15 2.15Z"
                     />
                   </svg>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
   );
 };

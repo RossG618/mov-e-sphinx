@@ -6,12 +6,13 @@ import { UpcomingTV } from "../upcomingTvShows";
 import { TopRatedMovies } from "../topRateMovies";
 import { UpcomingGenre } from "./upcomingActionMovies";
 import { TopRatedShows } from './../topRateShows';
+import { HorrorMovies } from '../movies/Genres/horrorMovies';
 
 export default function RecentlyAdded() {
   
   return (
     <div className="overflow-hidden pt-5">
-      <div className="recent d-flex position-relative align-items-center pt-5  justify-content-center">
+      <div className="recent d-flex position-relative align-items-center   justify-content-center">
         <div className="row row-cols-1 row-cols-xl-2">
           <div className=" col   px-5 pt-5 pb-5 "> 
             <h2 className="text-uppercase text-light fw-bold orbitron ls-1px fs-1 z-23 mb-5 mx-3">
@@ -78,7 +79,7 @@ export default function RecentlyAdded() {
             
           </div>
 
-          <UpcomingGenre />
+          <HorrorMovies />
         </div>
         <div className="mx-5 z-23 w-75 mx-auto">
           <div className="justify-content-between d-flex mt- pt-">

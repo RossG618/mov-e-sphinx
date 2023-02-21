@@ -54,6 +54,24 @@ height: 73vh;
     font-family:'rog fonts', 'copperplate gothic', 'Orbitron', 'Alfa Slab One', 'Anton' !important;
     
 }
+.black-ops{
+    font-family: 'black ops one' !important;
+}
+.audiowide{
+    font-family: 'audiowide' !important;
+}
+.michroma{
+    font-family: 'michroma' !important;
+}
+.russo-one{
+    font-family: 'russo one' !important;
+}
+.archivo{
+    font-family: 'Archivo' !important;
+}
+.gajraj-one{
+    font-family: 'Gajraj One' !important;
+}
 .nabla{
     font-family: 'nabla' !important;
 }
@@ -70,10 +88,10 @@ height: 73vh;
     font-family: 'Inter';
 }
 .exo{
-    font-family: 'Exo';
+    font-family: 'Exo' !important;
 }
 .prosto{
-    font-family: 'Prosto One';
+    font-family: 'Prosto One' !important;
 }
 .poppins{
     font-family:'Poppins', sans-serif;
