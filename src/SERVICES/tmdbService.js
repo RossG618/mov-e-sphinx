@@ -83,6 +83,12 @@ export function getPopularMovies(page) {
 export function getTvShow(id) {
   return axios.get(`${tmdbUrl}/3/tv/${id}?api_key=${API_KEY}&language=en-US`);
 }
+//SIMILAR TV
+export function getRelatedTVs(id) {
+  return axios.get(
+    `${tmdbUrl}/3/tv/${id}/similar?api_key=${API_KEY}&language=en-US`
+  );
+}
 //upcomin
 export function getAirinTodayTVsPage1() {
   return axios.get(

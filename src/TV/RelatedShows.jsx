@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getRelatedMovies } from "../SERVICES/tmdbService";
+import { getRelatedTVs } from "../SERVICES/tmdbService";
 import { TitleSM } from "../titles/title-sm";
 import _ from "lodash";
 export const RelatedShows = ({tvID}) => {
   const [related, setRelated] = useState([]);
 
   useEffect(() => {
-    getRelatedMovies(tvID)
+    getRelatedTVs(tvID)
       .then((responses) => {
         _.forEach(_.take(_.filter(_.orderBy(responses.data.results, 'popularity', 'desc'), {original_language: 'en'}), 6), (res) => {
           //   upcoming.push(res.data);
@@ -26,8 +26,8 @@ export const RelatedShows = ({tvID}) => {
         type={"tv"}        
         id={tv.id}
         posterPath={tv.poster_path}
-        name={tv.title}
-        firstDate={tv.release_date}
+        name={tv.name}
+        firstDate={tv.first_air_date}
         runtime={tv.runtime}
         popularity={tv.popularity}
         homePath={tv.homepage}

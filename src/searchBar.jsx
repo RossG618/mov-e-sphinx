@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faX } from "@fortawesome/free-solid-svg-icons";
 import './searchItem.css'
 // import axios from "axios";
+import { Link } from 'react-router-dom';
 
 export const SearchBar = ({nav}) => {
   // const [data, setData] = useState([]);
@@ -37,14 +38,19 @@ export const SearchBar = ({nav}) => {
         .then((promises) => {
           let rez = [];
 
-          _.forEach(promises, function (promise) {
+          _.forEach(promises, function (promise, index) {
             const items = _.take(_.orderBy(promise.data.results, 'popularity', 'desc'), 12);
             const filteredItems = _.filter(items, {
               original_language: "en",
             });
 
-            console.log('response', items, filteredItems);
-            rez.push(...filteredItems);            
+            const results = filteredItems.map((item) => {
+              item.newType = index === 0 ? 'movie' : 'tv'
+              return item;
+            });
+
+            console.log('response', items, results);
+            rez.push(...results);            
           });   
           
           setresults([...rez]);
@@ -77,10 +83,11 @@ const clear = () => {
 </div>
       
            
-     {value && <div className="position-absolute flix-bg searchList py-1 shadow"  style={{ width: "420px" }}>
+     {value && <div className="position-absolute flix-bg searchList py-1 px-0 shadow">
         {results.map((item) => (
-          <div
-          className="upcoming_post-div px-1 pb-3  w-100 z-23 d-flex border-secondary align-items-start justify-content-center row row-cols-2"
+          <Link
+          className="upcoming_post-div px-1 pb-3 m-0 w-100 z-23 d-flex border-secondary align-items-start justify-content-center row row-cols-2"
+          to={`/${item.newType === 'movie' ? 'movies' : 'tv'}/${item.id}`}
           // onClick={history()}
           key={item.id}
           id={item.id}
@@ -99,7 +106,7 @@ const clear = () => {
             {/* <div className="text-start d-flex row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2"> */}
               <div className="text-start ">
                 <a href={item.homepage} className="col">
-                  <small className="text-light  fw-bold text-capitalize " style={lineTextStyle2}>
+                  <small className="text-light  fw-bold text-capitalize  " style={lineTextStyle2}>
                     {item.title || item.name}
                   </small>
                 </a>
@@ -127,7 +134,7 @@ const clear = () => {
                   <h5 className=" text-warning text-center">
                     {item.tagline}
                   </h5>
-                  <small className="text-start gap-3 px-1" style={lineTextStyleSearch}>
+                  <small className="text-start gap-3 px-1 clamp" style={lineTextStyleSearch}>
                     {item.overview}
                   </small>
                 </div>
@@ -147,7 +154,7 @@ const clear = () => {
                 </button> */}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>}
     </div>

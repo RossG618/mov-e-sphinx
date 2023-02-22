@@ -27,34 +27,33 @@ export default function Home() {
             Shows & More
           </h1>
 
-          <ul className="d-flex lsStyle-none gap-3 mt-3 mb-5 p-0 align-items-center">
-            <li>
-              <small className="border border-2 fw-bold text-bg-light px-2 py-1 m-0 ">
+          <div className="block-to-line lsStyle-none gap-3 mt-3 p-0 align-items-center ">
+            <div className="d-flex mb-3">
+
+              <small className="border border-2 fw-bold text-bg-light px-0 py-1 m-0 ">
                 PG-18
               </small>
-            </li>
-            <li>
               <small className="text-bg-transparent fw-bold text-light border border-2 px-2 py-1 m-0">
                 HD/SD
               </small>
-            </li>
-            <span className="d-flex mx-2 gap-2">
-              <li>genres</li>
+            </div>
+            <div className="d-flex mb-3  mx-2 gap-2">
+              <p className="m-0">genres</p>
 
-              <li className="d-flex align-items-center">
+              <p className="d-flex align-items-center m-0">
                 <FontAwesomeIcon
                   className="text-warning mx-2"
                   icon={faCalendarDays}
                 />
                 date
-              </li>
-              <li className="d-flex align-items-center">
+              </p>
+              <p className="d-flex align-items-center m-0">
                 <FontAwesomeIcon className="text-warning mx-2" icon={faClock} />
                 time
-              </li>
-            </span>
-          </ul>
-          <Link to="/recentlyadded" className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-5 fw-bold d-flex align-items-center py-2 px-3 gap-2 " style={{width: 'fit-content'}}>
+              </p>
+            </div>
+          </div>
+          <Link to="/recentlyadded" className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-5 fw-bold d-flex align-items-center py-2 px-3 gap-2 mt-4 " style={{width: 'fit-content'}}>
             <FontAwesomeIcon className="mx-2" icon={faPlay} />
             watch now
           </Link>
@@ -70,24 +69,24 @@ export default function Home() {
         <div className="opac-box-06"></div>
 
         <div className="container z-23">
-          <div className="justify-content-between d-flex my-5">
+          <div className="justify-content-between align-items-center d-flex block-to-line my-5">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
                 4k streaming
               </h6>
               <h2 className="text-light">Upcoming Movies</h2>
             </div>
-            <ul className=" gap-3">
-              <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
+            <ul className=" p-0 mt-3 gap-3">
+              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 action
               </li>
-              <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
+              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 comedy
               </li>
-              <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
+              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 sci-fi
               </li>
-              <li className="btn mx-2 rounded-pill border border-2 text-capitalize text-bg-dark">
+              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
                 horror
               </li>
             </ul>
@@ -99,14 +98,14 @@ export default function Home() {
         </div>
         <div className="download-offline pt-5">
           <div className=" d-flex py-5 z-23 row row-cols-1 row-cols-xl-2 container mx-auto ">
-            <div className="d-flex gap-3 mb-5 align-items-base justify-content-center col">
+            <div className="block-to-line gap-3 mb-5 align-items-base justify-content-center col">
               <img
                 className="border border-warning img-square "
                 src="https://www.slashgear.com/img/gallery/netflix-4k-streaming-on-macos-big-sur-to-require-a-t2-security-chip/intro-import.jpg"
                 alt="download"
 
               />
-              <button className="btn btn-info fw-light  align-self-end rounded border-0 " style={{height:500}}>
+              {/* <button className="btn btn-info fw-light  align-self-end rounded border-0 rot90" style={{height:500}}>
                 <p className="rot90">DOWNLOAD</p>{" "}
                 <svg
                   className="mt-4"
@@ -120,7 +119,7 @@ export default function Home() {
                     d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm13-7.65-9.65-9.65 2.15-2.15 6 6V8h3v18.55l6-6 2.15 2.15Z"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
             <div className="flex-column text-start col">
               <span className="d-flex align-items-center mb-3">

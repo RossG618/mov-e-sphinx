@@ -35,6 +35,21 @@ height: 73vh;
     z-index: 20;
     justify-self: center !important;
 }
+.block-to-line{
+    display: inline-flex;
+}
+@media screen and (max-width: 1080px){
+    .hero-content{
+        left: 2.7rem;
+        bottom: 0;
+        position: absolute;
+        z-index: 20;
+        justify-self: center !important;
+    }
+.block-to-line{
+    display: block !important;
+}
+}
 .preview-content{
     left: 26%;
     position: absolute;
@@ -109,6 +124,7 @@ height: 73vh;
     /* background-position: center; */
     position: relative;
 }
+
 .upcoming_post-div{
     padding: 0;
 }
@@ -157,6 +173,15 @@ fill: #fff;
     max-width: 500px;
     max-height: 500px;
     object-fit: cover;
+
+}
+@media screen and (max-width: 545px){
+    .img-square{
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        
+    }
 }
 .top-rated-tv{
     background: #141E30;  /* fallback for old browsers */
