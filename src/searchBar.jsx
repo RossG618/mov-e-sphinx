@@ -63,8 +63,7 @@ export const SearchBar = ({nav}) => {
     e.preventDefault();
     setValue(e.target.value);
   };
-const clear = () => {
-}
+
   return (
     <div className="position-relative ">
       <div class="input-group d-flex rounded-pill border border-2 border-secondary p-0 d-flex overflow-hidden align-items-center">
@@ -73,12 +72,13 @@ const clear = () => {
           id='search'
           className=" rounded-pill text-bg-dark px-2 overflow-hidden "
           placeholder="search title"
+          
           onChange={(e) => handleSubmit(e)}
           onClick={() => nav(false)}
           type="text"
         />
   <div class="input-group-append ">
-    <span role='button' class="input-group-text bg-transparent border-0" style={{width: 'fit-content'}} id="basic-addon2" onClick={clear}><FontAwesomeIcon inverse icon={faX}/></span>
+    <span role='button' class="input-group-text bg-transparent border-0" style={{width: 'fit-content'}} id="basic-addon2"><FontAwesomeIcon inverse icon={faX}/></span>
   </div>
 </div>
       

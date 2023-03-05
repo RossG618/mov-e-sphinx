@@ -3,7 +3,7 @@ import '../watchNow/movie.css';
 import { UpcomingGenre } from '../whatsNew/upcomingActionMovies';
 import { useParams } from 'react-router-dom';
 import { TvShowcase } from './tvShowcase';
-import { TopRatedShows } from '../topRateShows';
+import { TopRatedShows } from './topRateShows';
 import { RelatedShows } from './RelatedShows';
 export const ShowInfoPage = () => {
   

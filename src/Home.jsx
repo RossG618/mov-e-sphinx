@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
-import Trial from './Trial/trial';
+import Trial from "./Trial/trial";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
@@ -9,14 +9,14 @@ import {
   faTv,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
-import { UpcomingMovies } from "./upcomingMovies";
-// import { UpcomingTV } from "./upcomingTvShows";
-import { TopRatedMovies } from "./topRateMovies";
-import { TopRatedShows } from './topRateShows';
+import { TrendingMovies } from "./movies/TrendingMovies";
 import { Link } from "react-router-dom";
+import { TopTV } from "./TV/TopTV";
+import { TopMovies } from "./movies/TopMovies";
+import { TrendingTV } from "./TV/TrendingTV";
 //
 export default function Home() {
-
+  const [movieSelected, setMovieSelected] = useState(true);
   return (
     <div>
       <div className="home bg-dark d-flex position-relative align-items-center h-100">
@@ -29,7 +29,6 @@ export default function Home() {
 
           <div className="block-to-line lsStyle-none gap-3 mt-3 p-0 align-items-center ">
             <div className="d-flex mb-3">
-
               <small className="border border-2 fw-bold text-bg-light px-0 py-1 m-0 ">
                 PG-18
               </small>
@@ -53,11 +52,14 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Link to="/recentlyadded" className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-5 fw-bold d-flex align-items-center py-2 px-3 gap-2 mt-4 " style={{width: 'fit-content'}}>
+          <Link
+            to="/recentlyadded"
+            className="text-decoration-none text-uppercase btn btn-outline-warning rounded-pill border border-3 border-warning fs-5 fw-bold d-flex align-items-center py-2 px-3 gap-2 mt-4 "
+            style={{ width: "fit-content" }}
+          >
             <FontAwesomeIcon className="mx-2" icon={faPlay} />
             watch now
           </Link>
-          
         </div>
         <div className="hero-left py-5"></div>
         <div className="hero-right py-5"></div>
@@ -69,31 +71,78 @@ export default function Home() {
         <div className="opac-box-06"></div>
 
         <div className="container z-23">
-          <div className="justify-content-between align-items-center d-flex block-to-line my-5">
+          <div className="justify-content-between align-items-center d-flex block-to-line mt-5 mb-3">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
                 4k streaming
               </h6>
-              <h2 className="text-light">Upcoming Movies</h2>
+              <h2 className="text-light">Trending</h2>
+              <button
+                className={`rounded shadow mx-2 text-uppercase text-light btn ${
+                  movieSelected && "btn-outline-primary"
+                }`}
+                onClick={() => {
+                  setMovieSelected(true);
+                }}
+              >
+                movies
+              </button>
+              <button
+                className={`rounded shadow mx-2 text-uppercase text-light btn ${
+                  !movieSelected && "btn-outline-success"
+                }`}
+                onClick={() => {
+                  setMovieSelected(false);
+                }}
+              >
+                TV shows
+              </button>
             </div>
-            <ul className=" p-0 mt-3 gap-3">
-              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
-                action
-              </li>
-              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
-                comedy
-              </li>
-              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
-                sci-fi
-              </li>
-              <li className="btn m-2 rounded-pill border border-2 text-capitalize text-bg-dark">
-                horror
-              </li>
-            </ul>
+            {/* { movieSelected ?
+           <ul>
+              
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-primary ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={null} onClick={e => setGenre(e.currentTarget.value)}>all movies</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-primary ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={28} onClick={e => setGenre(e.currentTarget.value)}>action</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-primary ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={35} onClick={e => setGenre(e.currentTarget.value)}>comedy</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-primary ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={27} onClick={e => setGenre(e.currentTarget.value)}>horror</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-primary ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={878} onClick={e => setGenre(e.currentTarget.value)}>sci-fi</button>
+            
+          </ul>
+          :
+          <ul>
+              
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-success ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={null} onClick={e => setGenre(e.currentTarget.value)}>all shows</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-success ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={10759} onClick={e => setGenre(e.currentTarget.value)}>action</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-success ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={35} onClick={e => setGenre(e.currentTarget.value)}>comedy</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-success ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={10762} onClick={e => setGenre(e.currentTarget.value)}>kids</button>
+            
+            
+              <button className={`rounded shadow mx-2 text-uppercase text-light btn btn-outline-success ${movieSelected ? 'btn-outline-succuess' : 'btn-outline-primary'}`} value={10765} onClick={e => setGenre(e.currentTarget.value)}>sci-fi</button>
+            
+          </ul>
+          } */}
           </div>
 
           <div className="row row-cols-2 row-cols-md-3  row-cols-xl-5 row-cols-xxl-6">
-            <UpcomingMovies />
+            {movieSelected ? (
+              <TrendingMovies aos={"zoom-in"} />
+            ) : (
+              <TrendingTV aos={"zoom-in"} />
+            )}
           </div>
         </div>
         <div className="download-offline pt-5">
@@ -103,7 +152,6 @@ export default function Home() {
                 className="border border-warning img-square "
                 src="https://www.slashgear.com/img/gallery/netflix-4k-streaming-on-macos-big-sur-to-require-a-t2-security-chip/intro-import.jpg"
                 alt="download"
-
               />
               {/* <button className="btn btn-info fw-light  align-self-end rounded border-0 rot90" style={{height:500}}>
                 <p className="rot90">DOWNLOAD</p>{" "}
@@ -198,81 +246,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="top-rated bg-dark ">
-        <div className="container py-5">
-          <small className="text-warning text-uppercase">
-            online streaming
-          </small>
-          <h2 className="text-capitalize text-light fs-1 fw-bold">
-            top rated movies
-          </h2>
-          <div className="my-5">
-            <ul>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                all movies
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                action
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                comedy
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                horror
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                sci-fi
-              </li>
-            </ul>
-          </div>
-          <div className=" row row-cols-3  row-cols-md-4 row-cols-xl-4 row-cols-xxl-5">
-            <TopRatedMovies />
-
-
-          </div>
-        </div>
-      </div>
-
-      <div className="top-rated-tv ">
-        <div className="container py-5">
-          <small className="text-warning text-uppercase">
-            online streaming
-          </small>
-          <h2 className="text-capitalize text-light fs-1 fw-bold">
-            world best TV shows
-          </h2>
-          <div className="my-5">
-            <ul>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                all tv shows
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                action
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                comedy
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                horror
-              </li>
-              <li className="btn rounded border shadow mx-2 text-uppercase text-light">
-                sci-fi
-              </li>
-            </ul>
-          </div>
-          <div className="row row-cols-3  row-cols-md-4 row-cols-xl-4 row-cols-xxl-5 ">
-            <TopRatedShows/>
-
-            
-          </div>
-        </div>
-      </div>
-
-    <Trial/>
-      
-
-      
+      <TopMovies />
+      <TopTV />
+      <Trial />
     </div>
   );
 }

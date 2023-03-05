@@ -13,7 +13,6 @@ root.render(
       redirect_uri: 'https://movi-sphinx.netlify.app/'
     }}
   >
-
       <App />
   </Auth0Provider>
 );

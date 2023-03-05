@@ -1,10 +1,11 @@
 import '../home.css';
-import '../title.css'
+import '../titles/title.css'
 import _ from 'lodash';
 import { useState, useEffect } from "react";
 import { getMovie } from '../SERVICES/tmdbService';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import ShowcasePopper from './ShowcasePopper';
 
 export const lineTextStyle = {
   maxWidth: '100%',
@@ -30,7 +31,7 @@ export const MovieShowcase = ({movieID}) => {
  }, [movieID]);
  
   return (
-    <div className="upcoming_post-div p-3  z-23 d-flex border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
+    <div className="upcoming_post-div p-3  z-23 block-to-line border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
       <div className="col pb-2">
         <a href={preview.homepage}>
           <img
@@ -42,11 +43,12 @@ export const MovieShowcase = ({movieID}) => {
       </div>
       <div className="lsStyle-none justify-content-between text-light mt-3 px-5 col">
         <div className="text-start d-flex row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2">
-          <a href={preview.homepage} className="col">
+          {/* <a href={preview.homepage} className="col">
             <p className="text-light fs-3 fw-bold text-capitalize mb-2 ">
               {preview.title}
             </p>
-          </a>
+          </a> */}
+          <ShowcasePopper titleInfo={preview}/>
           <div className="d-flex align-items-center text-end gap-2 mx-auto col">
           <p className="text-secondary fw-bold m-0 ">
             HD
@@ -58,7 +60,8 @@ export const MovieShowcase = ({movieID}) => {
             {preview.runtime && <small className="mx-2">{preview.runtime} min</small>}
             <small className="d-flex gap-1 align-items-base">
               <FontAwesomeIcon className="text-warning" icon={faThumbsUp} />
-              {Math.round(preview.popularity) / 10}
+              {/* {Math.round(preview.popularity) / 10} */}
+              {Math.round(preview.vote_average * 10)/10} / 10
             </small>
           </span>
         </div>

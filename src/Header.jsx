@@ -19,7 +19,7 @@ return(
 
         </div>
         <div className="nav-drop align-items-center" >
-            <ul className="d-flex navbar-nav gap-4 ls-1px"id={`${showNav ? 'reveal' : 'hide'}`}>
+            <ul className="align-items-center d-flex navbar-nav gap-4 ls-1px"id={`${showNav ? 'reveal' : 'hide'}`}>
                <a href="/" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov"> Home</li></a>
                <a href="/recentlyAdded" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">what's new</li></a>      
                <a href="/movies" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">movie</li></a>      
@@ -28,7 +28,7 @@ return(
                <a href="/favorites" className="text-decoration-none"> <li className="nav-item text-uppercase fw-bolder yellowHov">favorites</li></a>      
            <LoginButton />
             </ul>
-            <div className="d-flex align-items-center mx-4 gap-2 search">
+            <div className="d-flex align-items-center mx-4  gap-2 search">
          <SearchBar nav={setNav}/>
         </div>
         </div>

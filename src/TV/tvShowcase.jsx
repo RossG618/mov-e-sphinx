@@ -57,7 +57,8 @@ export const TvShowcase = ({tvID}) => {
             {preview.runtime && <small className="mx-2">{preview.runtime} min</small>}
             <small className="d-flex gap-1 align-items-base">
               <FontAwesomeIcon className="text-warning" icon={faThumbsUp} />
-              {Math.round(preview.popularity) / 10}
+              {/* {Math.round(preview.popularity) / 10} */}
+              {Math.round(preview.vote_average * 10)/10} / 10
             </small>
           </span>
         </div>

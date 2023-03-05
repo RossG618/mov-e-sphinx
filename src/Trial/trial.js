@@ -1,6 +1,6 @@
 const Trial = () => {
-    return ( <div className="trial ">
-    <div className="container d-flex align-items-center justify-content-around py-4">
+    return ( <div className="trial z-23">
+    <div className="container block-to-line align-items-center justify-content-around py-2">
       <div>
         <h2 className="text-uppercase fw-bold">
           start trial first{" "}
@@ -10,7 +10,7 @@ const Trial = () => {
           Enter email to create or restart your membership.
         </p>
       </div>
-      <div className="d-flex">
+      <div className="d-inline-flex">
         <input
           className="border-dark px-2 "
           type="email"

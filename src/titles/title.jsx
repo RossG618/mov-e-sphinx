@@ -21,9 +21,9 @@ export const Title = ({
   const [hovFav, setHovFav] = useState(false);
 
   const [favIcon, setFavIcon] = useState(false);
-  const boxShadow ={ 
-    boxShadow: "12px 12px 2000px 150px rgba(0, 0, 0, 1)",
-  };
+  // const boxShadow ={ 
+  //   boxShadow: "12px 12px 2000px 150px rgba(0, 0, 0, 1)",
+  // };
   const displayN = {display: 'none'};
   const lineTextStyle = {
     maxWidth: "100%",
@@ -46,8 +46,8 @@ export const Title = ({
       id={id}
     >
       <span className="position-relative h-100 poster-span"
-      onMouseEnter={() => setHovFav(!hovFav)}
-      onMouseLeave={() => setHovFav(!hovFav)}
+      onMouseEnter={() => setHovFav(true)}
+      onMouseLeave={() => setHovFav(false)}
       
       >
 
@@ -68,7 +68,7 @@ export const Title = ({
                 className="fav-star text-white"
                 icon={faStar}
                 onClick={(id) => handleFav(id)}
-                style={hovFav ? boxShadow : displayN}
+                style={hovFav ? '' : displayN}
 
                 />
                 )}

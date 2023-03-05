@@ -28,57 +28,39 @@ export function getMovie(id) {
     `${tmdbUrl}/3/movie/${id}?api_key=${API_KEY}&language=en-US`
   );
 }
-export function getHorrorMovies(page) {
+//GET GENRE MOVIES
+export function getGenreMovies(genre_id, page) {
   return axios.get(
-    `${tmdbUrl}/3/discover/movie?api_key=${API_KEY}&with_genres=27${page ? `&page=${page}`:null}}`
+    `${tmdbUrl}/3/discover/movie?api_key=${API_KEY}&with_genres=${genre_id}${page ? `&page=${page}`:null}`
   );
 }
-// export function getHorrorMovies() {
-//   return axios.get(
-//     `${tmdbUrl}/3/discover/movie?api_key=${API_KEY}&with_genres=27`
-//   );
-// }
 
-export function getUpcomingMoviesPage1() {
+
+export function getUpcomingMovies(genre_id, page) {
   return axios.get(
-    `${tmdbUrl}/3/movie/upcoming?api_key=${API_KEY}&language=en-US`
+    `${tmdbUrl}/3/movie/upcoming?api_key=${API_KEY}${genre_id ? `&with_genres=${genre_id}` : ''}${page ? `&page=${page}`:null}`
   );
 }
-export function getUpcomingMovies(page) {
-  return axios.get(
-    `${tmdbUrl}/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
-  );
-}
-export function getNowPlayingMoviesPage1() {
-  return axios.get(
-    `${tmdbUrl}/3/movie/now_playing?api_key=${API_KEY}&language=en-US`
-  );
-}
+
 export function getNowPlayingMovies(page) {
   return axios.get(
-    `${tmdbUrl}/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/movie/now_playing?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }
-export function getTopRatedMoviesPage1() {
-  return axios.get(
-    `${tmdbUrl}/3/movie/top_rated?api_key=${API_KEY}&language=en-US`
-  );
-}
+
 export function getTopRatedMovies(page) {
   return axios.get(
-    `${tmdbUrl}/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/movie/top_rated?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }
-export function getPopularMoviesPage1() {
-  return axios.get(
-    `${tmdbUrl}/3/movie/popular?api_key=${API_KEY}&language=en-US`
-  );
-}
+
 export function getPopularMovies(page) {
   return axios.get(
-    `${tmdbUrl}/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/movie/popular?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }
+
+
 //TV SHOWS
 export function getTvShow(id) {
   return axios.get(`${tmdbUrl}/3/tv/${id}?api_key=${API_KEY}&language=en-US`);
@@ -89,33 +71,30 @@ export function getRelatedTVs(id) {
     `${tmdbUrl}/3/tv/${id}/similar?api_key=${API_KEY}&language=en-US`
   );
 }
-//upcomin
-export function getAirinTodayTVsPage1() {
+//GET GENRE TV
+export function getGenreTV(genre_id, page) {
   return axios.get(
-    `${tmdbUrl}/3/tv/airing_today?api_key=${API_KEY}&language=en-US`
+    `${tmdbUrl}/3/discover/tv?api_key=${API_KEY}&with_genres=${genre_id}${page ? `&page=${page}`:null}`
   );
 }
+
+//TODAY
+
 export function getAirinTodayTVs(page) {
   return axios.get(
-    `${tmdbUrl}/3/tv/airing_today?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/tv/airing_today?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }
-export function getPopularTVsPage1() {
-  return axios.get(`${tmdbUrl}/3/tv/popular?api_key=${API_KEY}&language=en-US`);
-}
+
 export function getPopularTVs(page) {
   return axios.get(
-    `${tmdbUrl}/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/tv/popular?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }
 //top-rate
-export function getTopRatedTVsPage1() {
-  return axios.get(
-    `${tmdbUrl}/3/tv/top_rated?api_key=${API_KEY}&language=en-US`
-  );
-}
+
 export function getTopRatedTVs(page) {
   return axios.get(
-    `${tmdbUrl}/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`
+    `${tmdbUrl}/3/tv/top_rated?api_key=${API_KEY}&language=en-US${page ? `&page=${page}`:null}`
   );
 }

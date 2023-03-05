@@ -3,8 +3,7 @@ import _ from "lodash";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { TitleSM } from "./../titles/title-sm";
-import { getPopularMovies, getPopularMoviesPage1 } from "../SERVICES/tmdbService";
-import { Title } from "../titles/title";
+import { getPopularMovies } from "../SERVICES/tmdbService";
 export const UpcomingGenre = () => {
   //   const [actionCara, setActionCara] = useState([]);
   const [upcomAction, setUpcomAction] = useState([]);
@@ -20,7 +19,7 @@ export const UpcomingGenre = () => {
   //     .catch((res) => console.log(res.data));
   // }, []);
   useEffect(() => {
-    getPopularMoviesPage1()
+    getPopularMovies()
       .then((resp) => {
         let store = _.take(resp.data.results,6);
         _.forEach(store, (res) => {
@@ -71,7 +70,7 @@ export const UpcomingGenre = () => {
         <div className="  row row-cols-2 row-cols-sm-3 row-cols-xl-4 row-cols-xxl-6 mx-auto container ">
           {upcomAction.slice(0, 6).map((m) => (
             <div className="pb-2"key={m.id}>
-              <Title
+              <TitleSM
                 type={"movies"}
                 key={m.id}
                 id={m.id}
@@ -80,6 +79,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
+                vote={m.vote_average}
                 // homePath={m.backdrop_path}
               />
             </div>
@@ -98,6 +98,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
+                vote={m.vote_average}
                 // homePath={m.backdrop_path}
               />
             </div>
@@ -116,6 +117,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
+                vote={m.vote_average}
                 // homePath={m.backdrop_path}
               />
             </div>
@@ -133,6 +135,7 @@ export const UpcomingGenre = () => {
                 firstDate={m.release_date}
                 runtime={m.runtime}
                 popularity={m.popularity}
+                vote={m.vote_average}
                 // homePath={m.backdrop_path}
               />
             </div>
