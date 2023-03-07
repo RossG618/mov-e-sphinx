@@ -71,7 +71,7 @@ export default function Home() {
         <div className="opac-box-06"></div>
 
         <div className="container z-23">
-          <div className="justify-content-between align-items-center d-flex block-to-line mt-5 mb-3">
+          <div className="justify-content-between align-items-center d-flex block-to-line mt-2 mb-3">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
                 4k streaming
@@ -79,7 +79,7 @@ export default function Home() {
               <h2 className="text-light">Trending</h2>
               <button
                 className={`rounded shadow mx-2 text-uppercase text-light btn ${
-                  movieSelected && "btn-outline-primary"
+                  movieSelected && "btn-outline-primary shadow"
                 }`}
                 onClick={() => {
                   setMovieSelected(true);
@@ -89,7 +89,7 @@ export default function Home() {
               </button>
               <button
                 className={`rounded shadow mx-2 text-uppercase text-light btn ${
-                  !movieSelected && "btn-outline-success"
+                  !movieSelected && "btn-outline-success shadow"
                 }`}
                 onClick={() => {
                   setMovieSelected(false);

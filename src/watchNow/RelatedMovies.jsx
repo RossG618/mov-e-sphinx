@@ -8,7 +8,8 @@ export const RelatedMovies = ({movieID}) => {
   useEffect(() => {
     getRelatedMovies(movieID)
       .then((responses) => {
-        _.forEach(_.take(_.filter(_.orderBy(responses.data.results, 'popularity', 'desc'), {original_language: 'en'}), 6), (res) => {
+        const store = responses.data.results;
+        _.forEach(_.take(_.filter(store, {original_language: 'en'}), 6), (res) => {
           //   upcoming.push(res.data);
           setValue((upcoming) => [...upcoming, res]);
           //   console.log("upcoming", upcoming);

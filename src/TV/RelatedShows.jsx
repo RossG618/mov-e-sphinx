@@ -31,6 +31,8 @@ export const RelatedShows = ({tvID}) => {
         runtime={tv.runtime}
         popularity={tv.popularity}
         homePath={tv.homepage}
+        vote={tv.vote_average}
+
         />
         </div>
         ))}

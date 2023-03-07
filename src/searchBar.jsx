@@ -64,13 +64,20 @@ export const SearchBar = ({nav}) => {
     setValue(e.target.value);
   };
 
+  function clearInput(){
+    let getValue= document.getElementById("searchBar");
+      if (getValue.value !=="") {
+          getValue.value = "";
+          setValue('')
+      }
+}
   return (
     <div className="position-relative ">
       <div class="input-group d-flex rounded-pill border border-2 border-secondary p-0 d-flex overflow-hidden align-items-center">
       <input
           style={{ outline: "none", border: "none" }}
-          id='search'
-          className=" rounded-pill text-bg-dark px-2 overflow-hidden "
+          id='searchBar'
+          className=" rounded-pill text-bg-dark px-1 overflow-hidden "
           placeholder="search title"
           
           onChange={(e) => handleSubmit(e)}
@@ -78,22 +85,22 @@ export const SearchBar = ({nav}) => {
           type="text"
         />
   <div class="input-group-append ">
-    <span role='button' class="input-group-text bg-transparent border-0" style={{width: 'fit-content'}} id="basic-addon2"><FontAwesomeIcon inverse icon={faX}/></span>
+    <span role='button' class="input-group-text bg-transparent border-0" style={{width: 'fit-content'}} id="basic-addon2"><FontAwesomeIcon inverse icon={faX} onClick={clearInput}/></span>
   </div>
 </div>
       
            
      {value && <div className="position-absolute flix-bg searchList py-1 px-0 shadow">
-        {results.map((item) => (
+        {_.orderBy(results, 'vote_average', 'desc').map((item) => (
           <Link
-          className="upcoming_post-div px-1 pb-3 m-0 w-100 z-23 d-flex border-secondary align-items-start justify-content-center row row-cols-2"
+          className="upcoming_post-div  pb-3 m-0 w-100 z-23 d-flex border-secondary align-items-start justify-content-center row"
           to={`/${item.newType === 'movie' ? 'movies' : 'tv'}/${item.id}`}
-          // onClick={history()}
+          onClick={clearInput}
           key={item.id}
           id={item.id}
           // onClick={useNavigate(`/${type}/${id}`)}
           >
-            <div className="col-3 p px-0">
+            <div className="col-4 px-1">
               <a href={item.homepage}>
                 <img
                   className="img-fluid shadow w-100 poster"
@@ -102,7 +109,7 @@ export const SearchBar = ({nav}) => {
                 />
               </a>
             </div>
-            <div className="lsStyle-none justify-content-between  text-light  col-8">
+            <div className="lsStyle-none justify-content-between  text-light px-1 col-8">
             {/* <div className="text-start d-flex row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2"> */}
               <div className="text-start ">
                 <a href={item.homepage} className="col">

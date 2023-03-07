@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 export function TopMovies({favs, list}) {
   const [genre, setGenre] = useState(null);
   return (
-<div className="top-rated bg-dark ">
+<div className="top-rated " >
         <div className="container py-5 z-23">
           <small className="text-warning text-uppercase">
             online streaming

@@ -34,7 +34,7 @@ export const TitleSM = ({
   };
   return (
     <div
-      className="col bg-dark z-23 upcoming_poster-div align-items-center overflow-hidden"
+      className="col bg-dark z-23 upcoming_poster-div align-items-center overflow-hidden shadow"
       key={id}
       id={id}
       data-aos={aos}

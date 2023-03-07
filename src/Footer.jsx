@@ -87,10 +87,10 @@ const Footer = () => {
             height="80"
             alt=""
           />
-          <p>
+          <small>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Aliquam magni libero aut veritatis eius vel!
-          </p>
+          </small>
         </div>
       </div>
 

@@ -22,6 +22,13 @@ export function getRelatedMovies(id) {
     `${tmdbUrl}/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US`
   );
 }
+// MOVIE REVIEWS
+export function getMovieReviews(id) {
+  return axios.get(
+    `${tmdbUrl}/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
+  );
+}
+
 //MOVIES
 export function getMovie(id) {
   return axios.get(

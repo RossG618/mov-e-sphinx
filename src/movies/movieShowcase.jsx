@@ -31,7 +31,7 @@ export const MovieShowcase = ({movieID}) => {
  }, [movieID]);
  
   return (
-    <div className="upcoming_post-div p-3  z-23 block-to-line border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
+    <div className="upcoming_post-div p-3  z-23 block-to-line border-secondary row row-cols-1 row-cols-lg-2 align-items-center justify-content-center" data-aos="fade-down" key={preview.id} id={preview.id} style={{width: 'fit-content'}}>
       <div className="col pb-2">
         <a href={preview.homepage}>
           <img

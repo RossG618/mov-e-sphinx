@@ -4,7 +4,7 @@ import { GenreTvCarousel } from './../TV/genreTvCarousel';
 export default function TitleCarousel({aos, caraName, id, compName}) {
     // const [genre, setGenre] = useState(null);
   return (
-    <div className=" z-23 mx-5 w-75 mx-auto" data-aos={aos}>
+    <div className=" z-23 mx-5 w-75 mx-auto" data-aos={aos} data-aos-duration="500">
           <div className="justify-content-between d-flex mt-5 pt-5">
             <div className="text-start">
               <h6 className="text-uppercase fw-bold text-warning ">
